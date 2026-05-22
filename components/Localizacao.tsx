@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 export default function Localizacao() {
   return (
-    <section className="relative bg-warmlight text-textdark py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
+    <section className="relative bg-warmlight text-textdark py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="bairro">
 
       <div
         className="absolute inset-0 pointer-events-none"

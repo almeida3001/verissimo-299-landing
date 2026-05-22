@@ -19,7 +19,7 @@ export default function Empreendimento() {
   }
 
   return (
-    <section className="relative bg-bg overflow-hidden" id="empreendimento">
+    <section className="relative bg-bg overflow-hidden" id="localizacao">
 
       {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
       <div className="relative grid md:grid-cols-2 items-center gap-0">
@@ -87,7 +87,7 @@ export default function Empreendimento() {
           <div className="inline-flex items-center gap-3 mb-8">
             <span className="block h-px w-10 bg-sea/70" />
             <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
-              O Empreendimento
+              Localização
             </span>
           </div>
 

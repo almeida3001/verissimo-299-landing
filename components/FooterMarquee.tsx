@@ -40,8 +40,8 @@ export default function FooterMarquee() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           {[
-            { label: "Projeto",     href: "#empreendimento" },
-            { label: "Localização", href: "#localizacao" },
+            { label: "Localização",   href: "#localizacao" },
+            { label: "Sobre o bairro", href: "#bairro" },
             { label: "Galeria",     href: "#galeria" },
             { label: "Planta",      href: "#planta" },
             { label: "Interesse",   href: "#interesse" },

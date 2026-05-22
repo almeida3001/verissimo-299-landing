@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
-  { label: "Projeto",     href: "#empreendimento" },
-  { label: "Localização", href: "#localizacao" },
-  { label: "Galeria",     href: "#galeria" },
-  { label: "Planta",      href: "#planta" },
+  { label: "Localização",   href: "#localizacao" },
+  { label: "Sobre o bairro", href: "#bairro" },
+  { label: "Galeria",       href: "#galeria" },
+  { label: "Planta",        href: "#planta" },
 ];
 
 export default function NavBar() {
@@ -25,7 +25,7 @@ export default function NavBar() {
 
   /* Scroll-spy — destaca link da seção visível */
   useEffect(() => {
-    const sectionIds = ["empreendimento", "localizacao", "galeria", "planta"];
+    const sectionIds = ["localizacao", "bairro", "galeria", "planta"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
