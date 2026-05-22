@@ -202,31 +202,30 @@ export default function GaleriaParallax() {
               </div>
 
               {/* Headline */}
-              <h2 className="font-outfit font-extralight text-5xl md:text-7xl lg:text-8xl text-cream leading-[0.95] tracking-tight mb-6 max-w-4xl mx-auto text-balance">
+              <h2 className="font-outfit font-extralight text-[2.25rem] sm:text-5xl md:text-7xl lg:text-8xl text-cream leading-[1] md:leading-[0.95] tracking-tight mb-6 max-w-4xl mx-auto text-balance">
                 {s.headline}
               </h2>
 
               {/* Sub */}
-              <p className="font-cormorant italic text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl mx-auto leading-snug">
+              <p className="font-cormorant italic text-base sm:text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl mx-auto leading-snug">
                 {s.sub}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Header label fixo no topo da seção */}
+        {/* Header label — canto inferior esquerdo (não compete com navbar) */}
         <motion.div
-          className="absolute top-24 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="absolute bottom-12 left-6 md:bottom-24 md:left-12 flex items-center gap-3 z-20"
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="block h-px w-8 bg-cream/30" />
+          <span className="block h-px w-6 bg-cream/30" />
           <span className="font-josefin text-[10px] tracking-w3 text-cream/45 uppercase">
             Galeria de imagens
           </span>
-          <span className="block h-px w-8 bg-cream/30" />
         </motion.div>
 
         {/* Counter */}
