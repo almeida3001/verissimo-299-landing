@@ -103,7 +103,7 @@ export default function Empreendimento() {
           <div className="font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
               O <span className="text-cream">Veríssimo Residence</span> nasce em um
-              dos trechos mais residenciais da Barra — entre o calçadão da Praia do
+              dos trechos mais residenciais da Barra, entre o calçadão da Praia do
               Pepê e a esquina da Av. Olegário Maciel, na{" "}
               <span className="text-cream">Av. Érico Veríssimo, 299</span>. Assinado
               pelo <span className="text-cream">Studio R Arquitetura & Interiores</span>,

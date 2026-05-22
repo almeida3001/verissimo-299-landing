@@ -85,7 +85,7 @@ export default function Localizacao() {
 
           <p className="font-cormorant italic text-lg md:text-xl text-textdark/85 leading-snug mb-8 max-w-md">
             Localizado na Av. Érico Veríssimo, 299, entre o calçadão da Praia do
-            Pepê e a esquina da Av. Olegário Maciel — o coração mais residencial
+            Pepê e a esquina da Av. Olegário Maciel. O coração mais residencial
             da Barra da Tijuca.
           </p>
 
@@ -101,7 +101,7 @@ export default function Localizacao() {
             </p>
             <p>
               Tudo o que faz deste pedaço da Barra o mais desejado por quem
-              já conhece — e o melhor segredo guardado de quem ainda vai descobrir.
+              já conhece, e o melhor segredo guardado de quem ainda vai descobrir.
             </p>
           </div>
 

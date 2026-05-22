@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Quais as tipologias e metragens?",
-    a: "Apartamentos de 2 quartos e coberturas privativas com varandas amplas. Metragens e plantas detalhadas estão disponíveis na tabela completa — envie um contato para receber.",
+    a: "Apartamentos de 2 quartos e coberturas privativas com varandas amplas. Metragens e plantas detalhadas estão disponíveis na tabela completa. Envie um contato para receber.",
   },
   {
     q: "Quando é a entrega?",

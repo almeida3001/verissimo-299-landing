@@ -8,6 +8,7 @@ import SobreAbsoluto from "@/components/SobreAbsoluto";
 import FAQ from "@/components/FAQ";
 import LeadForm from "@/components/LeadForm";
 import FooterMarquee from "@/components/FooterMarquee";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
         <LeadForm />
       </main>
       <FooterMarquee />
+      <FloatingWhatsApp />
     </>
   );
 }

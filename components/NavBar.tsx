@@ -122,7 +122,7 @@ export default function NavBar() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Abrir menu"
-            className="md:hidden relative flex items-center justify-center w-9 h-9 rounded-full text-cream/85 hover:text-cream transition-colors"
+            className="md:hidden relative flex items-center justify-center w-11 h-11 rounded-full text-cream/85 hover:text-cream transition-colors"
           >
             <Menu size={18} strokeWidth={1.5} />
           </button>

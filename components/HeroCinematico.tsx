@@ -74,8 +74,8 @@ export default function HeroCinematico() {
         {/* Eyebrow */}
         <motion.div
           className="flex items-center gap-4 mb-8"
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.45, ease }}
         >
           <span className="block h-px w-10 bg-cream/60" />
@@ -114,8 +114,8 @@ export default function HeroCinematico() {
         {/* Role rotating line */}
         <motion.p
           className="font-outfit font-extralight text-xl md:text-2xl lg:text-3xl text-cream/90 mb-6 leading-snug max-w-3xl"
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.9, ease }}
         >
           Uma boutique{" "}
@@ -137,8 +137,8 @@ export default function HeroCinematico() {
         {/* CTAs */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 items-center mt-4"
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 1.1, ease }}
         >
           <a
