@@ -26,8 +26,8 @@ const config: Config = {
         /* Accents */
         gold:     "#CA8A04",  /* champagne gold — CTA principal */
         goldsoft: "#EAB308",  /* champagne hover */
-        sand:     "#D6C8A3",  /* areia clara — secondary accent */
-        sea:      "#7FA8B0",  /* azul mar — mantido pra ar de praia */
+        sand:     "#D6C8A3",  /* areia clara */
+        sea:      "#D9C8A3",  /* INVERTIDO de azul-mar pra bege claro da areia */
         bronze:   "#CA8A04",  /* alias compat */
         terra:    "#3F3935",
         warmsand: "#E8DCC4",
