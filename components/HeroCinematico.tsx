@@ -83,15 +83,21 @@ export default function HeroCinematico() {
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.4, delay: 0.2, ease }}
-              style={{ willChange: "transform" }}
+              style={{
+                willChange: "transform",
+                textShadow: "0 2px 24px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.35)",
+              }}
             >
               Veríssimo
             </motion.h1>
           </div>
           <div className="overflow-hidden -mt-2 md:-mt-4 lg:-mt-6">
             <motion.p
-              className="font-cormorant italic font-light text-xl md:text-3xl lg:text-4xl text-sea/90"
-              style={{ letterSpacing: "0.45em" }}
+              className="font-cormorant italic font-light text-xl md:text-3xl lg:text-4xl text-cream"
+              style={{
+                letterSpacing: "0.45em",
+                textShadow: "0 1px 16px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4)",
+              }}
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.2, delay: 0.55, ease }}
