@@ -13,10 +13,10 @@ export default function HomePage() {
       <NavBar />
       <main>
         <HeroCinematico />
+        <Localizacao />
         <Empreendimento />
         <GaleriaParallax />
         <Planta />
-        <Localizacao />
         <LeadForm />
       </main>
       <FooterMarquee />

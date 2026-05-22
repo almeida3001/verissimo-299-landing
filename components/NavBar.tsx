@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
+  { label: "Localização", href: "#localizacao" },
   { label: "Projeto",     href: "#empreendimento" },
   { label: "Galeria",     href: "#galeria" },
   { label: "Planta",      href: "#planta" },
-  { label: "Localização", href: "#localizacao" },
 ];
 
 export default function NavBar() {
