@@ -18,10 +18,10 @@ const config: Config = {
         line:     "#57534E",  /* stone-600 — para divisores */
 
         /* Light variants — pra alternar seções em bege off-white */
-        warmlight:   "#EDE5D5",  /* bege off-white quente, intermediate */
+        warmlight:   "#F5EFE3",  /* off-white quente, claramente light */
         textdark:    "#1C1917",  /* texto principal sobre fundo light = stone-900 */
         muteddark:   "#57534E",  /* texto secundário sobre fundo light = stone-600 */
-        linedark:    "#D6CFC1",  /* divisores sobre fundo light */
+        linedark:    "#E0D8C5",  /* divisores sobre fundo light */
 
         /* Accents */
         gold:     "#CA8A04",  /* champagne gold — CTA principal */
