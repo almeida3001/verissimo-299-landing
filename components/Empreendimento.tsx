@@ -40,118 +40,113 @@ export default function Empreendimento() {
   return (
     <section className="relative bg-bg overflow-hidden" id="empreendimento">
 
-      {/* ── PARTE 1 — Hero da seção com video banner (player click-to-play) ── */}
-      <div className="relative w-full h-[85vh] md:h-screen overflow-hidden">
+      {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
+      <div className="relative grid md:grid-cols-2 min-h-[85vh] md:min-h-screen">
 
-        {/* Video — pausado por padrão, mostra poster */}
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/videos/videobanner2-poster.jpg"
-          controls={playing}
-          className="absolute inset-0 w-full h-full object-cover"
-          onPause={() => setPlaying(false)}
-          onPlay={() => setPlaying(true)}
-          onEnded={() => setPlaying(false)}
+        {/* Vídeo (50% esquerda) */}
+        <div className="relative overflow-hidden bg-bg min-h-[60vh] md:min-h-screen">
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/videos/videobanner2-poster.jpg"
+            controls={playing}
+            className="absolute inset-0 w-full h-full object-cover"
+            onPause={() => setPlaying(false)}
+            onPlay={() => setPlaying(true)}
+            onEnded={() => setPlaying(false)}
+          >
+            <source src="/videos/videobanner2.mp4" type="video/mp4" />
+          </video>
+
+          {/* Overlay com botão play — só quando não tá tocando */}
+          {!playing && (
+            <>
+              {/* Overlay escuro sutil */}
+              <div className="absolute inset-0 bg-black/30" />
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.45) 100%)" }}
+              />
+
+              {/* Botão Play centralizado */}
+              <motion.button
+                onClick={handlePlay}
+                aria-label="Assistir ao vídeo do empreendimento"
+                className="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-4 z-10 cursor-pointer group"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                <span className="relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full border border-sea/60 group-hover:border-sea group-hover:scale-110 transition-all duration-400">
+                  <span className="absolute inset-0 rounded-full bg-sea/10 group-hover:bg-sea/25 transition-all duration-400" />
+                  <span className="absolute inset-0 rounded-full bg-sea/15 group-hover:bg-sea/30 blur-xl transition-all duration-500" />
+                  <Play size={22} className="relative text-sea ml-1" fill="currentColor" />
+                </span>
+                <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream/85 uppercase group-hover:text-sea transition-colors duration-300">
+                  Assistir ao vídeo
+                </span>
+              </motion.button>
+            </>
+          )}
+        </div>
+
+        {/* Conteúdo descritivo (50% direita) */}
+        <motion.div
+          className="relative flex flex-col justify-center px-6 md:px-12 lg:px-16 py-16 md:py-20"
+          initial={{ opacity: 0, x: 32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <source src="/videos/videobanner2.mp4" type="video/mp4" />
-        </video>
-
-        {/* Overlays — só visíveis quando NÃO tá tocando */}
-        {!playing && (
-          <>
-            <div className="absolute inset-0 bg-black/45" />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(28,25,23,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 70%, rgba(28,25,23,0.95) 100%)",
-              }}
-            />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%)" }}
-            />
-          </>
-        )}
-
-        {/* Conteúdo centralizado — esconde quando tá tocando */}
-        {!playing && (
-          <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
-
-            {/* Eyebrow */}
-            <motion.div
-              className="inline-flex items-center gap-3 mb-8"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-            >
-              <span className="block h-px w-10 bg-sea/70" />
-              <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
-                O Empreendimento
-              </span>
-              <span className="block h-px w-10 bg-sea/70" />
-            </motion.div>
-
-            {/* Headline */}
-            <div className="overflow-hidden mb-2">
-              <motion.h2
-                className="font-outfit font-extralight text-5xl md:text-7xl lg:text-[7rem] text-cream leading-[0.92] tracking-tight text-balance max-w-5xl"
-                initial={{ y: "115%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
-                Uma localização
-              </motion.h2>
-            </div>
-            <div className="overflow-hidden mb-10">
-              <motion.h2
-                className="font-cormorant italic font-light text-5xl md:text-7xl lg:text-[7rem] text-sea leading-[0.92] tracking-tight text-balance"
-                initial={{ y: "115%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.3, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
-                de tirar o fôlego
-              </motion.h2>
-            </div>
-
-            {/* Sub */}
-            <motion.p
-              className="font-cormorant italic text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl leading-snug mb-12"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.85 }}
-            >
-              Na Avenida Érico Veríssimo, frente para o mar.
-            </motion.p>
-
-            {/* Botão Play */}
-            <motion.button
-              onClick={handlePlay}
-              aria-label="Assistir ao vídeo do empreendimento"
-              className="group inline-flex items-center gap-4 cursor-pointer"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 1.05 }}
-            >
-              <span className="relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border border-sea/60 group-hover:border-sea group-hover:scale-110 transition-all duration-400">
-                <span className="absolute inset-0 rounded-full bg-sea/10 group-hover:bg-sea/20 transition-all duration-400" />
-                <Play size={20} className="relative text-sea ml-0.5" fill="currentColor" />
-              </span>
-              <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream/85 uppercase group-hover:text-sea transition-colors duration-300">
-                Assistir ao vídeo
-              </span>
-            </motion.button>
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="block h-px w-10 bg-sea/70" />
+            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
+              O Empreendimento
+            </span>
           </div>
-        )}
+
+          {/* Headline */}
+          <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-3 text-balance">
+            Uma localização
+          </h2>
+          <h2 className="font-cormorant italic font-light text-4xl md:text-5xl lg:text-6xl text-sea leading-[0.95] tracking-tight mb-8 text-balance">
+            de tirar o fôlego
+          </h2>
+
+          {/* Sub */}
+          <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-10 max-w-md">
+            Na Avenida Érico Veríssimo, frente para o mar.
+          </p>
+
+          {/* Descrição detalhada */}
+          <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
+            <p>
+              O <span className="text-cream">Veríssimo Residence</span> é um projeto
+              residencial de baixa escala assinado pelo{" "}
+              <span className="text-cream">Studio R Arquitetura & Interiores</span>,
+              localizado na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
+              coração da Barra da Tijuca.
+            </p>
+            <p>
+              Apenas <span className="text-cream">térreo + 3 pavimentos</span> com
+              quatro unidades por andar — apartamentos de 2 quartos e coberturas
+              privativas. Varandas amplas, plantas funcionais e paisagismo tropical
+              integrado em cada detalhe.
+            </p>
+            <p>
+              Fachada com <span className="text-cream">ripado de madeira natural</span>,
+              vidro temperado em esquadrias generosas e{" "}
+              <span className="text-cream">pedra portuguesa</span> no embasamento.
+              Coroada por <span className="text-cream">pergolado superior em bambu</span>,
+              que filtra a luz e marca a silhueta do edifício.
+            </p>
+          </div>
+        </motion.div>
       </div>
 
       {/* ── PARTE 2 — Descrição detalhada do projeto ── */}
