@@ -80,7 +80,7 @@ export default function HeroCinematico() {
         >
           <span className="block h-px w-10 bg-cream/60" />
           <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream uppercase">
-            Apenas 6 unidades · pré-lançamento 2027
+            Apenas 10 unidades · pré-lançamento
           </span>
           <span className="block h-px w-10 bg-cream/60" />
         </motion.div>

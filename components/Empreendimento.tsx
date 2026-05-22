@@ -193,7 +193,7 @@ export default function Empreendimento() {
 
               {/* Sub italic */}
               <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
-                Três andares. Seis apartamentos. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
+                Doze apartamentos. Quatro por andar nos dois primeiros, duas coberturas em cada um dos níveis superiores. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
               </p>
 
               {/* Parágrafos descritivos */}
@@ -205,11 +205,11 @@ export default function Empreendimento() {
                   responsável por alguns dos endereços mais desejados do litoral carioca.
                 </p>
                 <p>
-                  São apenas <span className="text-cream">seis unidades no total</span>{" "}
-                  — duas por andar, em <span className="text-cream">três pavimentos sobre
-                  térreo livre</span>. Apartamentos de 2 quartos e coberturas privativas
-                  com varandas amplas, paisagismo tropical integrado e iluminação cênica
-                  em toda a circulação.
+                  São <span className="text-cream">doze unidades no total</span>:
+                  quatro apartamentos no primeiro andar, quatro no segundo, e duas
+                  coberturas em cada um dos dois níveis superiores. Apartamentos de
+                  2 quartos e coberturas privativas com varandas amplas, paisagismo
+                  tropical integrado e iluminação cênica em toda a circulação.
                 </p>
                 <p>
                   A fachada combina <span className="text-cream">ripado de madeira natural</span>,
@@ -269,28 +269,28 @@ export default function Empreendimento() {
               </span>
             </div>
 
-            {/* Destaque principal — 6 apartamentos */}
+            {/* Destaque principal — 12 apartamentos */}
             <div className="grid md:grid-cols-12 gap-px bg-elevated/30 border-y border-elevated/50">
-              {/* Hero stat — Apenas 6 unidades */}
+              {/* Hero stat — 12 unidades */}
               <div className="md:col-span-5 bg-bg px-6 py-10 md:py-14 flex flex-col justify-center">
                 <p className="font-outfit font-extralight text-7xl md:text-8xl lg:text-9xl text-sea leading-none mb-3">
-                  06
+                  12
                 </p>
                 <p className="font-cormorant italic text-xl md:text-2xl text-cream/85">
                   apartamentos no prédio inteiro
                 </p>
                 <p className="font-josefin text-[10px] tracking-w2 text-cream/65 uppercase mt-2">
-                  2 por andar · privacidade real
+                  4 por andar · 2 coberturas por nível
                 </p>
               </div>
 
               {/* Demais stats */}
               <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-2 divide-x divide-y divide-elevated/40">
                 {[
+                  { value: "4 + 4",            label: "Apartamentos · 1º e 2º andar" },
+                  { value: "2 + 2",            label: "Coberturas privativas"     },
                   { value: "2 quartos",        label: "Tipologia padrão"          },
-                  { value: "Coberturas",       label: "Privativas com terraço"    },
-                  { value: "Térreo + 3",       label: "Pavimentos"                },
-                  { value: "Entrega 2027",     label: "Pré-lançamento"            },
+                  { value: "Entrega",          label: "Pré-lançamento"            },
                   { value: "Studio R",         label: "Arquitetura & Interiores"  },
                   { value: "Absoluto",         label: "Construção e Incorporação" },
                 ].map((s) => (

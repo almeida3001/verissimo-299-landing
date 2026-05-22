@@ -35,17 +35,18 @@ export default function Planta() {
           </h2>
 
           <p className="font-josefin text-sm text-muteddark leading-relaxed mb-10 max-w-md">
-            Duas unidades por andar dispostas em layout espelhado. Sala integrada
-            à varanda, cozinha aberta à sala de jantar e circulação central com hall
-            de elevadores. Todas as unidades com vista privilegiada e acesso à varanda.
+            Quatro unidades por andar nos dois primeiros pavimentos, com hall
+            de elevadores central. Sala integrada à varanda, cozinha aberta à
+            sala de jantar. Coberturas privativas nos dois níveis superiores.
           </p>
 
           <div className="space-y-4 border-t border-linedark pt-8">
             {[
               { label: "Tipologia",   value: "2 quartos / Cobertura" },
-              { label: "Pavimentos",  value: "Térreo livre + 3 andares" },
-              { label: "Unidades",    value: "6 no total · 2 por andar" },
-              { label: "Arquitetura", value: "Studio R Arquitetura & Interiores" },
+              { label: "Unidades",    value: "12 no total" },
+              { label: "Apartamentos", value: "4 por andar (1º e 2º)" },
+              { label: "Coberturas",   value: "2 por nível · 2 níveis" },
+              { label: "Arquitetura",  value: "Studio R Arquitetura & Interiores" },
             ].map((item) => (
               <div key={item.label} className="flex items-baseline justify-between gap-4">
                 <span className="font-josefin text-[10px] tracking-w2 text-muteddark/70 uppercase">{item.label}</span>

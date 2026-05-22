@@ -7,7 +7,7 @@ import { Plus } from "lucide-react";
 const faqs = [
   {
     q: "Quantas unidades estão disponíveis?",
-    a: "Apenas 6 apartamentos no prédio inteiro — 2 por andar, em 3 pavimentos sobre térreo livre. Por ser pré-lançamento, todas estão disponíveis para a folha de interesse.",
+    a: "São 12 unidades no total: 4 apartamentos no primeiro andar, 4 no segundo, e 2 coberturas privativas em cada um dos dois níveis superiores. Por ser pré-lançamento, todas estão disponíveis para a folha de interesse.",
   },
   {
     q: "Quais as tipologias e metragens?",
