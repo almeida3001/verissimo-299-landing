@@ -7,7 +7,7 @@ import { Play } from "lucide-react";
 
 const diferenciais = [
   { num: "01", label: "Localização Privilegiada", desc: "A poucos passos da Praia do Pepê, no coração da Barra da Tijuca. Endereço consolidado, valorização constante." },
-  { num: "02", label: "Escala Boutique",          desc: "Térreo + 3 pavimentos apenas. Quatro unidades por andar. Exclusividade, privacidade e convívio em baixa escala." },
+  { num: "02", label: "Apenas 16 unidades",       desc: "Térreo e três andares. Quatro apartamentos por andar. Dezesseis vizinhos no total. O oposto da torre." },
   { num: "03", label: "Arquitetura Assinada",     desc: "Projeto do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
   { num: "04", label: "Fachada Atemporal",        desc: "Ripado de madeira natural, vidro temperado e pedra portuguesa. Pergolado superior em bambu integrado ao paisagismo." },
   { num: "05", label: "Iluminação Cênica",        desc: "Iluminação linear LED nas circulações, varandas e paisagismo. Atmosfera singular do amanhecer ao anoitecer." },
@@ -127,11 +127,11 @@ export default function Empreendimento() {
           {/* Descrição detalhada */}
           <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
-              O <span className="text-cream">Veríssimo Residence</span> é um projeto
-              residencial de baixa escala assinado pelo{" "}
+              O <span className="text-cream">Veríssimo Residence</span> é um edifício
+              baixo e raro na Barra. Apenas quatro andares. Assinado pelo{" "}
               <span className="text-cream">Studio R Arquitetura & Interiores</span>,
-              localizado na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
-              coração da Barra da Tijuca.
+              na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
+              entre o calçadão da Praia do Pepê e a esquina da Olegário Maciel.
             </p>
             <p>
               Apenas <span className="text-cream">térreo + 3 pavimentos</span> com
@@ -195,7 +195,7 @@ export default function Empreendimento() {
 
               {/* Sub italic */}
               <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
-                Um edifício de baixa escala que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
+                Quatro andares. Dezesseis apartamentos. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
               </p>
 
               {/* Parágrafos descritivos */}
