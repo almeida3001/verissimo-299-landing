@@ -14,17 +14,6 @@ const diferenciais = [
   { num: "06", label: "Tipologias Exclusivas",    desc: "Apartamentos de 2 quartos e coberturas privativas. Varandas amplas, plantas funcionais e acabamento de alto padrão." },
 ];
 
-const acabamentos = [
-  "Ripado de madeira natural",
-  "Pedra portuguesa no térreo",
-  "Vidro temperado em esquadrias amplas",
-  "Pergolado superior em bambu",
-  "Iluminação linear LED integrada",
-  "Paisagismo tropical assinado",
-  "Hall social com pé-direito duplo",
-  "Lobby de mármore travertino",
-];
-
 export default function Empreendimento() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -340,48 +329,6 @@ export default function Empreendimento() {
                   </div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-
-          {/* Acabamentos */}
-          <motion.div
-            className="mb-20"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-3 mb-8">
-              <span className="block h-px w-8 bg-sea" />
-              <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
-                Acabamentos & Materiais
-              </span>
-            </div>
-
-            <h3 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] mb-10 max-w-3xl text-balance">
-              Sem ornamento.
-              <br />
-              <span className="font-cormorant italic text-cream">Apenas matéria.</span>
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-12 max-w-3xl">
-              {acabamentos.map((item, i) => (
-                <motion.div
-                  key={item}
-                  className="flex items-center gap-3 py-2 border-b border-elevated/40"
-                  initial={{ opacity: 0, x: 12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.06 }}
-                >
-                  <span className="font-josefin text-[9px] tracking-w2 text-sea/70 uppercase w-6">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-outfit font-light text-base text-cream/85">
-                    {item}
-                  </span>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
 
