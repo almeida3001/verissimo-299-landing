@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
+import { Play } from "lucide-react";
 
 const diferenciais = [
   { num: "01", label: "Localização Privilegiada", desc: "A poucos passos da Praia do Pepê, no coração da Barra da Tijuca. Endereço consolidado, valorização constante." },
@@ -25,101 +26,132 @@ const acabamentos = [
 
 export default function Empreendimento() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
-  useEffect(() => {
+  function handlePlay() {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = true;
-    v.play().catch(() => {});
-  }, []);
+    v.muted = false;
+    v.volume = 1;
+    v.currentTime = 0;
+    v.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+  }
 
   return (
     <section className="relative bg-bg overflow-hidden" id="empreendimento">
 
-      {/* ── PARTE 1 — Hero da seção com video banner ── */}
+      {/* ── PARTE 1 — Hero da seção com video banner (player click-to-play) ── */}
       <div className="relative w-full h-[85vh] md:h-screen overflow-hidden">
 
-        {/* Video background */}
+        {/* Video — pausado por padrão, mostra poster */}
         <video
           ref={videoRef}
-          autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/videos/videobanner2-poster.jpg"
+          controls={playing}
           className="absolute inset-0 w-full h-full object-cover"
+          onPause={() => setPlaying(false)}
+          onPlay={() => setPlaying(true)}
+          onEnded={() => setPlaying(false)}
         >
           <source src="/videos/videobanner2.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-black/45" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(28,25,23,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 70%, rgba(28,25,23,0.95) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%)" }}
-        />
+        {/* Overlays — só visíveis quando NÃO tá tocando */}
+        {!playing && (
+          <>
+            <div className="absolute inset-0 bg-black/45" />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(28,25,23,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 70%, rgba(28,25,23,0.95) 100%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%)" }}
+            />
+          </>
+        )}
 
-        {/* Conteúdo centralizado */}
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
+        {/* Conteúdo centralizado — esconde quando tá tocando */}
+        {!playing && (
+          <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
 
-          {/* Eyebrow */}
-          <motion.div
-            className="inline-flex items-center gap-3 mb-8"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-          >
-            <span className="block h-px w-10 bg-gold/70" />
-            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-gold uppercase">
-              O Empreendimento
-            </span>
-            <span className="block h-px w-10 bg-gold/70" />
-          </motion.div>
-
-          {/* Headline */}
-          <div className="overflow-hidden mb-2">
-            <motion.h2
-              className="font-outfit font-extralight text-5xl md:text-7xl lg:text-[7rem] text-cream leading-[0.92] tracking-tight text-balance max-w-5xl"
-              initial={{ y: "115%" }}
-              whileInView={{ y: 0 }}
+            {/* Eyebrow */}
+            <motion.div
+              className="inline-flex items-center gap-3 mb-8"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.9, delay: 0.2 }}
             >
-              Uma localização
-            </motion.h2>
-          </div>
-          <div className="overflow-hidden mb-10">
-            <motion.h2
-              className="font-cormorant italic font-light text-5xl md:text-7xl lg:text-[7rem] text-gold leading-[0.92] tracking-tight text-balance"
-              initial={{ y: "115%" }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.3, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              de tirar o fôlego
-            </motion.h2>
-          </div>
+              <span className="block h-px w-10 bg-sea/70" />
+              <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
+                O Empreendimento
+              </span>
+              <span className="block h-px w-10 bg-sea/70" />
+            </motion.div>
 
-          {/* Sub */}
-          <motion.p
-            className="font-cormorant italic text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl leading-snug"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.85 }}
-          >
-            Na Avenida Érico Veríssimo, frente para o mar.
-          </motion.p>
-        </div>
+            {/* Headline */}
+            <div className="overflow-hidden mb-2">
+              <motion.h2
+                className="font-outfit font-extralight text-5xl md:text-7xl lg:text-[7rem] text-cream leading-[0.92] tracking-tight text-balance max-w-5xl"
+                initial={{ y: "115%" }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              >
+                Uma localização
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden mb-10">
+              <motion.h2
+                className="font-cormorant italic font-light text-5xl md:text-7xl lg:text-[7rem] text-sea leading-[0.92] tracking-tight text-balance"
+                initial={{ y: "115%" }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.3, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                de tirar o fôlego
+              </motion.h2>
+            </div>
+
+            {/* Sub */}
+            <motion.p
+              className="font-cormorant italic text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl leading-snug mb-12"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.85 }}
+            >
+              Na Avenida Érico Veríssimo, frente para o mar.
+            </motion.p>
+
+            {/* Botão Play */}
+            <motion.button
+              onClick={handlePlay}
+              aria-label="Assistir ao vídeo do empreendimento"
+              className="group inline-flex items-center gap-4 cursor-pointer"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 1.05 }}
+            >
+              <span className="relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border border-sea/60 group-hover:border-sea group-hover:scale-110 transition-all duration-400">
+                <span className="absolute inset-0 rounded-full bg-sea/10 group-hover:bg-sea/20 transition-all duration-400" />
+                <Play size={20} className="relative text-sea ml-0.5" fill="currentColor" />
+              </span>
+              <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream/85 uppercase group-hover:text-sea transition-colors duration-300">
+                Assistir ao vídeo
+              </span>
+            </motion.button>
+          </div>
+        )}
       </div>
 
       {/* ── PARTE 2 — Descrição detalhada do projeto ── */}
