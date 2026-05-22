@@ -224,7 +224,7 @@ export default function GaleriaParallax() {
         >
           <span className="block h-px w-8 bg-cream/30" />
           <span className="font-josefin text-[10px] tracking-w3 text-cream/45 uppercase">
-            Galeria · Localização
+            Galeria de imagens
           </span>
           <span className="block h-px w-8 bg-cream/30" />
         </motion.div>
