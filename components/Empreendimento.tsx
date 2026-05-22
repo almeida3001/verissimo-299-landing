@@ -104,8 +104,8 @@ export default function Empreendimento() {
             Na Avenida Érico Veríssimo, no coração da Barra.
           </p>
 
-          {/* Descrição detalhada */}
-          <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
+          {/* Descrição — apenas 1 parágrafo */}
+          <div className="font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
               O <span className="text-cream">Veríssimo Residence</span> nasce em um
               dos trechos mais residenciais da Barra — entre o calçadão da Praia do
@@ -113,19 +113,6 @@ export default function Empreendimento() {
               <span className="text-cream">Av. Érico Veríssimo, 299</span>. Assinado
               pelo <span className="text-cream">Studio R Arquitetura & Interiores</span>,
               um endereço para morar com tempo.
-            </p>
-            <p>
-              Apenas <span className="text-cream">três andares</span> sobre térreo
-              livre, com <span className="text-cream">duas unidades por andar</span> —
-              apartamentos de 2 quartos e coberturas privativas. Varandas amplas,
-              plantas funcionais e paisagismo tropical integrado em cada detalhe.
-            </p>
-            <p>
-              Fachada com <span className="text-cream">ripado de madeira natural</span>,
-              vidro temperado em esquadrias generosas e{" "}
-              <span className="text-cream">pedra portuguesa</span> no embasamento.
-              Coroada por <span className="text-cream">pergolado superior em bambu</span>,
-              que filtra a luz e marca a silhueta do edifício.
             </p>
           </div>
 
@@ -139,12 +126,10 @@ export default function Empreendimento() {
             </div>
             <div className="space-y-px bg-white/5">
               {[
-                { label: "Praia do Pepê",         dist: "4 min a pé"  },
-                { label: "Av. Olegário Maciel",   dist: "3 min a pé"  },
-                { label: "Supermercado Zona Sul", dist: "ao lado"     },
-                { label: "Bodytech · Smart Fit",  dist: "5 min a pé"  },
-                { label: "Bosque da Barra",       dist: "7 min a pé"  },
-                { label: "BRT · Metrô Linha 4",   dist: "12 min a pé" },
+                { label: "Praia do Pepê",         dist: "4 min a pé" },
+                { label: "Av. Olegário Maciel",   dist: "3 min a pé" },
+                { label: "Supermercado Zona Sul", dist: "ao lado"    },
+                { label: "Bodytech · Smart Fit",  dist: "5 min a pé" },
               ].map((p, i) => (
                 <div
                   key={p.label}
