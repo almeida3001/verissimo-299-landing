@@ -149,7 +149,7 @@ export default function Empreendimento() {
       </div>
 
       {/* ── PARTE 2 — Descrição detalhada do projeto ── */}
-      <div className="relative px-6 md:px-16 py-24 md:py-32">
+      <div className="relative px-6 md:px-16 py-24 md:py-32" id="empreendimento">
 
         {/* Gradient bege sutil */}
         <div
@@ -176,7 +176,7 @@ export default function Empreendimento() {
               <div className="inline-flex items-center gap-3 mb-6">
                 <span className="block h-px w-8 bg-sea" />
                 <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
-                  O Projeto
+                  O Empreendimento
                 </span>
               </div>
 
