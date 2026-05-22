@@ -12,7 +12,7 @@ const backgrounds = [
   "/images/jardim-aereo.png",
 ];
 
-const roles = ["boutique", "privilegiada", "exclusiva", "à beira-mar"];
+const roles = ["privilegiada", "exclusiva", "contemporânea", "à beira-mar"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -33,7 +33,7 @@ export default function HeroCinematico() {
   return (
     <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo 299">
 
-      {/* ── Background Ken Burns crossfade ── */}
+      {/* ── Background — Ken Burns crossfade ── */}
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">
           <motion.div
@@ -55,21 +55,14 @@ export default function HeroCinematico() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Dark overlay — lighter to keep image visible */}
-        <div className="absolute inset-0 bg-black/30" />
-
-        {/* Vignette */}
+        <div className="absolute inset-0 bg-black/20" />
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%)" }}
+          style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%)" }}
         />
-
-        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
-
-        {/* Grain */}
         <div
-          className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
+          className="absolute inset-0 opacity-[0.045] mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
           }}
@@ -84,7 +77,7 @@ export default function HeroCinematico() {
           className="flex items-center gap-4 mb-8"
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.4, ease }}
+          transition={{ duration: 1, delay: 0.45, ease }}
         >
           <span className="block h-px w-10 bg-sand/60" />
           <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
@@ -93,15 +86,17 @@ export default function HeroCinematico() {
           <span className="block h-px w-10 bg-sand/60" />
         </motion.div>
 
-        {/* Nome — display italic gigante (mask reveal) */}
+        {/* Nome — Outfit extralight (padrão Absoluto/A+) com mask reveal */}
         <div className="overflow-hidden mb-8">
           <motion.h1
-            className="font-cormorant italic font-light text-7xl md:text-9xl lg:text-[12rem] text-cream leading-[0.88] tracking-tight"
-            initial={{ y: "110%" }}
+            className="font-outfit font-extralight text-6xl md:text-8xl lg:text-[10rem] text-cream leading-[0.92] tracking-tight text-balance"
+            initial={{ y: "115%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 1.3, delay: 0.3, ease }}
+            transition={{ duration: 1.4, delay: 0.2, ease }}
+            style={{ willChange: "transform" }}
           >
             Veríssimo
+            <span className="italic font-light text-sand/90"> 299</span>
           </motion.h1>
         </div>
 
@@ -110,7 +105,7 @@ export default function HeroCinematico() {
           className="font-outfit font-extralight text-xl md:text-2xl lg:text-3xl text-cream/90 mb-6 leading-snug max-w-3xl"
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.85, ease }}
+          transition={{ duration: 1, delay: 0.9, ease }}
         >
           Uma boutique{" "}
           <AnimatePresence mode="wait">
@@ -133,11 +128,11 @@ export default function HeroCinematico() {
           className="font-josefin text-sm md:text-base text-cream/55 max-w-md leading-relaxed mb-10"
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 1.05, ease }}
+          transition={{ duration: 1, delay: 1.1, ease }}
         >
-          Térreo + 3 pavimentos assinados pelo Studio R Arquitetura. Apartamentos
-          de 2 quartos e coberturas em fachada de ripado de madeira, vidro e
-          pedra natural.
+          Térreo + 3 pavimentos assinados pelo Studio R Arquitetura.
+          Apartamentos de 2 quartos e coberturas em fachada de ripado de madeira,
+          vidro e pedra natural.
         </motion.p>
 
         {/* CTAs */}
@@ -145,9 +140,8 @@ export default function HeroCinematico() {
           className="flex flex-col sm:flex-row gap-4 items-center"
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 1.25, ease }}
+          transition={{ duration: 1, delay: 1.3, ease }}
         >
-          {/* Solid sand */}
           <a
             href="#interesse"
             className="group inline-flex items-center gap-2.5 bg-sand text-bg font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:bg-cream transition-all duration-500 hover:scale-[1.03]"
@@ -156,7 +150,6 @@ export default function HeroCinematico() {
             <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform duration-400" />
           </a>
 
-          {/* Outlined */}
           <a
             href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo%20299"
             target="_blank"
@@ -174,7 +167,7 @@ export default function HeroCinematico() {
         className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
+        transition={{ delay: 1.8, duration: 0.8 }}
       >
         {backgrounds.map((_, i) => (
           <button
