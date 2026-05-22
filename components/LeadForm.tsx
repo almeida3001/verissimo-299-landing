@@ -52,12 +52,12 @@ export default function LeadForm() {
           <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
             Conhecer
             <br />
-            <span className="font-cormorant italic text-sea">o Veríssimo</span>
+            <span className="font-cormorant italic text-cream">em primeira mão.</span>
           </h2>
 
           <p className="font-josefin text-sm text-cream/55 leading-relaxed max-w-md mb-10">
-            Receba condições exclusivas de pré-lançamento, tabela de preços e atendimento
-            personalizado. Nosso time entra em contato em até 2 horas.
+            Tabela, condições de pré-lançamento e atendimento por corretores do
+            empreendimento. Resposta em até duas horas, em horário comercial.
           </p>
 
           {/* Dados de contato direto */}

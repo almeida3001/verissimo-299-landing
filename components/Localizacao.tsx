@@ -5,12 +5,13 @@ import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 
 const pontos = [
-  { label: "Praia do Pepê",            dist: "em frente"      },
-  { label: "Praia da Barra da Tijuca", dist: "a poucos passos" },
-  { label: "Supermercado Zona Sul",    dist: "ao lado"        },
-  { label: "Estação do Metrô",         dist: "minutos a pé"   },
-  { label: "BRT TransOeste",           dist: "próximo"        },
-  { label: "Shopping Barra",           dist: "3 min de carro" },
+  { label: "Praia do Pepê",         dist: "em frente"        },
+  { label: "Av. Olegário Maciel",   dist: "esquina"          },
+  { label: "Supermercado Zona Sul", dist: "ao lado"          },
+  { label: "Bodytech · Smart Fit",  dist: "5 min a pé"       },
+  { label: "Bosque da Barra",       dist: "7 min a pé"       },
+  { label: "BRT · Metrô Linha 4",   dist: "7 min a pé"       },
+  { label: "Hospital Samaritano",   dist: "5 min de carro"   },
 ];
 
 export default function Localizacao() {
@@ -95,14 +96,14 @@ export default function Localizacao() {
 
           {/* Headline */}
           <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
-            Localização
+            A Barra que poucos
             <br />
-            <span className="font-cormorant italic text-sea">privilegiada</span>
+            <span className="font-cormorant italic text-cream">conhecem por dentro.</span>
           </h2>
 
           {/* Sub */}
           <p className="font-cormorant italic text-lg md:text-xl text-cream/75 leading-snug mb-10 max-w-md">
-            Entre o mar e o melhor da Barra.
+            Cinco minutos a pé do mar. O resto, à sua porta.
           </p>
 
           {/* Lista de pontos */}

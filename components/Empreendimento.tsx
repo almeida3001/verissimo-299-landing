@@ -195,7 +195,7 @@ export default function Empreendimento() {
 
               {/* Sub italic */}
               <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
-                Um projeto residencial de baixa escala que reescreve o luxo na Barra da Tijuca.
+                Um edifício de baixa escala que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
               </p>
 
               {/* Parágrafos descritivos */}
@@ -294,9 +294,9 @@ export default function Empreendimento() {
             </div>
 
             <h3 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] mb-10 max-w-3xl text-balance">
-              O melhor da natureza,
+              Sem ornamento.
               <br />
-              <span className="font-cormorant italic text-sea">trazido para dentro.</span>
+              <span className="font-cormorant italic text-cream">Apenas matéria.</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-12 max-w-3xl">
