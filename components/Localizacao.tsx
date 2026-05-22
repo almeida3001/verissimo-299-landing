@@ -5,153 +5,132 @@ import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 
 const pontos = [
-  { label: "Praia da Barra da Tijuca", dist: "< 500m" },
-  { label: "Shopping Barra",           dist: "3 min"  },
-  { label: "Downtown RJ",              dist: "8 min"  },
-  { label: "Aeroporto Santos Dumont",  dist: "35 min" },
-  { label: "Aeroporto Galeão",         dist: "45 min" },
+  { label: "Praia da Barra da Tijuca", dist: "a poucos passos" },
+  { label: "Supermercado Zona Sul",    dist: "ao lado"        },
+  { label: "Estação do Metrô",         dist: "minutos a pé"   },
+  { label: "BRT TransOeste",           dist: "próximo"        },
+  { label: "Shopping Barra",           dist: "3 min de carro" },
 ];
 
 export default function Localizacao() {
   return (
-    <section className="relative bg-bg overflow-hidden" id="localizacao">
+    <section className="relative bg-bg py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
 
-      {/* ── Imagem aérea hero da seção ── */}
-      <div className="relative w-full h-[80vh] md:h-screen overflow-hidden">
+      {/* Gradient terroso de fundo */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 15% 50%, rgba(184, 135, 78, 0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 85% 50%, rgba(217, 205, 184, 0.08) 0%, transparent 55%)",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+        {/* ── Imagem aérea (esquerda) ── */}
         <motion.div
-          className="absolute inset-0"
-          initial={{ scale: 1.12 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 2.4, ease: "easeOut" }}
+          className="relative overflow-hidden"
+          style={{ aspectRatio: "4/5" }}
+          initial={{ opacity: 0, x: -32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src="/images/localizacao-aerea.jpg"
-            alt="Vista aérea da Barra da Tijuca · Veríssimo"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </motion.div>
-
-        {/* Overlay sutil */}
-        <div className="absolute inset-0 bg-black/30" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 70%, rgba(16,12,8,0.95) 100%)",
-          }}
-        />
-
-        {/* Conteúdo centralizado sobre a imagem */}
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
-
-          {/* Eyebrow */}
           <motion.div
-            className="inline-flex items-center gap-3 mb-8"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="absolute inset-0"
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
+            transition={{ duration: 2.4, ease: "easeOut" }}
           >
-            <span className="block h-px w-10 bg-sand/70" />
-            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
-              Localização
-            </span>
-            <span className="block h-px w-10 bg-sand/70" />
+            <Image
+              src="/images/localizacao-aerea.jpg"
+              alt="Vista aérea da Barra da Tijuca Veríssimo"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </motion.div>
 
-          {/* Headline */}
-          <div className="overflow-hidden mb-6">
-            <motion.h2
-              className="font-outfit font-extralight text-5xl md:text-7xl lg:text-8xl text-cream leading-[0.95] tracking-tight text-balance max-w-5xl"
-              initial={{ y: "115%" }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
-              No coração
-              <br />
-              <span className="font-cormorant italic text-sand">da Barra da Tijuca</span>
-            </motion.h2>
-          </div>
+          {/* Vignette sutil pra contraste */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }}
+          />
 
-          {/* Sub */}
-          <motion.p
-            className="font-cormorant italic text-xl md:text-2xl lg:text-3xl text-cream/85 max-w-2xl leading-snug mb-10"
-            initial={{ opacity: 0, y: 16 }}
+          {/* Pill com endereço sobre a imagem */}
+          <motion.div
+            className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6 md:right-6 flex items-center gap-2 px-4 py-2.5 rounded-full"
+            style={{
+              background: "rgba(36, 30, 22, 0.65)",
+              backdropFilter: "blur(16px) saturate(160%)",
+            }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            A poucos passos do mar, cercado pelo que importa.
-          </motion.p>
-
-          {/* Endereço */}
-          <motion.div
-            className="flex items-center gap-2.5 px-6 py-3 rounded-full"
-            style={{ background: "rgba(36, 30, 22, 0.55)", backdropFilter: "blur(16px) saturate(160%)" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <MapPin size={14} className="text-sand" />
-            <span className="font-josefin text-[11px] tracking-w2 text-cream/90 uppercase">
+            <MapPin size={12} className="text-sand flex-shrink-0" />
+            <span className="font-josefin text-[10px] tracking-w2 text-cream/85 uppercase">
               Av. Érico Veríssimo, 299 · Barra da Tijuca
             </span>
           </motion.div>
-        </div>
-      </div>
-
-      {/* ── Distâncias / Pontos próximos ── */}
-      <div className="relative max-w-7xl mx-auto px-6 md:px-16 py-24 md:py-32">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="font-josefin text-[10px] tracking-w3 text-sand uppercase mb-4">
-            Pontos próximos
-          </p>
-          <h3 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-tight max-w-3xl mx-auto text-balance">
-            Tudo o que faz a Barra ser a Barra,
-            <br />
-            <span className="font-cormorant italic text-sand">à sua porta.</span>
-          </h3>
         </motion.div>
 
-        {/* Grid de distâncias */}
-        <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-white/8 border-t border-b border-white/8">
-          {pontos.map((p, i) => (
-            <motion.div
-              key={p.label}
-              className="px-6 py-8 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
-            >
-              <p className="font-cormorant text-3xl md:text-4xl text-sand mb-2">{p.dist}</p>
-              <p className="font-josefin text-[10px] tracking-w2 text-cream/55 uppercase leading-snug">
-                {p.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA Maps */}
+        {/* ── Conteúdo (direita) ── */}
         <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          initial={{ opacity: 0, x: 32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="block h-px w-10 bg-sand" />
+            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
+              Localização
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
+            Localização
+            <br />
+            <span className="font-cormorant italic text-sand">privilegiada</span>
+          </h2>
+
+          {/* Sub */}
+          <p className="font-cormorant italic text-lg md:text-xl text-cream/75 leading-snug mb-10 max-w-md">
+            Tudo o que faz a Barra ser a Barra, à sua porta.
+          </p>
+
+          {/* Lista de pontos */}
+          <div className="space-y-px bg-white/5 mb-10">
+            {pontos.map((p, i) => (
+              <motion.div
+                key={p.label}
+                className="flex items-center justify-between gap-6 bg-bg px-5 py-4 group hover:bg-surface transition-colors duration-300"
+                initial={{ opacity: 0, x: 12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-josefin text-[10px] tracking-w2 text-sand uppercase w-8">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-sand transition-colors duration-300">
+                    {p.label}
+                  </span>
+                </div>
+                <span className="font-cormorant italic text-sm md:text-base text-cream/55 whitespace-nowrap">
+                  {p.dist}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Maps */}
           <a
             href="https://maps.google.com/?q=Av.+Érico+Veríssimo,+299,+Barra+da+Tijuca,+Rio+de+Janeiro"
             target="_blank"
