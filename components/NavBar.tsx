@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
-  { label: "Localização", href: "#localizacao" },
   { label: "Projeto",     href: "#empreendimento" },
+  { label: "Localização", href: "#localizacao" },
   { label: "Galeria",     href: "#galeria" },
   { label: "Planta",      href: "#planta" },
 ];

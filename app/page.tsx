@@ -13,8 +13,8 @@ export default function HomePage() {
       <NavBar />
       <main>
         <HeroCinematico />
-        <Localizacao />
         <Empreendimento />
+        <Localizacao />
         <GaleriaParallax />
         <Planta />
         <LeadForm />
