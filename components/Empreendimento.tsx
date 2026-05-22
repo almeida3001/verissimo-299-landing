@@ -221,10 +221,9 @@ export default function Empreendimento() {
               </div>
             </motion.div>
 
-            {/* Lado direito — Imagem do Veríssimo 50% */}
+            {/* Lado direito — Imagem do Veríssimo 50% (preenche altura toda) */}
             <motion.div
-              className="relative overflow-hidden order-first md:order-last"
-              style={{ aspectRatio: "4/5" }}
+              className="relative overflow-hidden order-first md:order-last h-full min-h-[500px] md:min-h-[600px]"
               initial={{ opacity: 0, x: 32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}

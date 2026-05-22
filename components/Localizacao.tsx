@@ -16,12 +16,11 @@ export default function Localizacao() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-stretch">
 
-        {/* Imagem aérea — 50% */}
+        {/* Imagem aérea — 50% (preenche altura toda) */}
         <motion.div
-          className="relative overflow-hidden"
-          style={{ aspectRatio: "4/5" }}
+          className="relative overflow-hidden h-full min-h-[500px] md:min-h-[600px]"
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
