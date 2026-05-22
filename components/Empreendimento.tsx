@@ -34,13 +34,13 @@ export default function Empreendimento() {
           >
             <div className="inline-flex items-center gap-3 mb-8">
               <motion.span
-                className="block h-px bg-sand"
+                className="block h-px bg-gold"
                 initial={{ width: 0 }}
                 whileInView={{ width: 40 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               />
-              <span className="font-josefin text-[10px] tracking-w3 text-sand uppercase">
+              <span className="font-josefin text-[10px] tracking-w3 text-gold uppercase">
                 O Empreendimento
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function Empreendimento() {
             <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
               Veríssimo
               <br />
-              <span className="font-cormorant italic font-light text-sand">residence</span>
+              <span className="font-cormorant italic font-light text-gold">residence</span>
             </h2>
           </motion.div>
 
@@ -100,7 +100,7 @@ export default function Empreendimento() {
               <span className="font-josefin text-[10px] tracking-w3 text-muted uppercase mb-5 block">
                 {d.num}
               </span>
-              <h3 className="font-outfit font-light text-xl text-cream mb-3 group-hover:text-sand transition-colors duration-300">
+              <h3 className="font-outfit font-light text-xl text-cream mb-3 group-hover:text-gold transition-colors duration-300">
                 {d.label}
               </h3>
               <p className="font-josefin text-sm text-cream/50 leading-relaxed">

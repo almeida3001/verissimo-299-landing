@@ -9,14 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg:      "#2A251D",
-        surface: "#3A352B",
-        cream:   "#F2EDE6",
-        muted:   "#A89D8A",
-        sand:    "#D9CDB8",
-        sea:     "#7FA8B0",
-        bronze:  "#B8874E",
-        terra:   "#4D453A",
+        /* Paleta Luxury Real Estate (Stone warm-neutral + Champagne Gold) */
+        bg:       "#1C1917",  /* stone-900 — warm dark neutral, sem barro */
+        surface:  "#292524",  /* stone-800 */
+        elevated: "#44403C",  /* stone-700 */
+        cream:    "#FAFAF9",  /* stone-50 */
+        muted:    "#A8A29E",  /* stone-400 */
+        line:     "#57534E",  /* stone-600 — para divisores */
+
+        /* Accents */
+        gold:     "#CA8A04",  /* champagne gold — CTA principal */
+        goldsoft: "#EAB308",  /* champagne hover */
+        sand:     "#D6C8A3",  /* areia clara — secondary accent */
+        sea:      "#7FA8B0",  /* azul mar — mantido pra ar de praia */
+        bronze:   "#CA8A04",  /* alias compat */
+        terra:    "#3F3935",
         warmsand: "#E8DCC4",
       },
       fontFamily: {

@@ -70,7 +70,7 @@ export default function Localizacao() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <MapPin size={12} className="text-sand flex-shrink-0" />
+            <MapPin size={12} className="text-gold flex-shrink-0" />
             <span className="font-josefin text-[10px] tracking-w2 text-cream/85 uppercase">
               Av. Érico Veríssimo, 299 · Barra da Tijuca
             </span>
@@ -86,8 +86,8 @@ export default function Localizacao() {
         >
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-3 mb-8">
-            <span className="block h-px w-10 bg-sand" />
-            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
+            <span className="block h-px w-10 bg-gold" />
+            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-gold uppercase">
               Localização
             </span>
           </div>
@@ -96,7 +96,7 @@ export default function Localizacao() {
           <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
             Localização
             <br />
-            <span className="font-cormorant italic text-sand">privilegiada</span>
+            <span className="font-cormorant italic text-gold">privilegiada</span>
           </h2>
 
           {/* Sub */}
@@ -116,10 +116,10 @@ export default function Localizacao() {
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-josefin text-[10px] tracking-w2 text-sand uppercase w-8">
+                  <span className="font-josefin text-[10px] tracking-w2 text-gold uppercase w-8">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-sand transition-colors duration-300">
+                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-gold transition-colors duration-300">
                     {p.label}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function Localizacao() {
             href="https://maps.google.com/?q=Av.+Érico+Veríssimo,+299,+Barra+da+Tijuca,+Rio+de+Janeiro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-josefin text-[11px] tracking-w2 text-sea uppercase border-b border-sea/40 pb-1 hover:text-sand hover:border-sand transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-josefin text-[11px] tracking-w2 text-sea uppercase border-b border-sea/40 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
           >
             Abrir no Google Maps
           </a>

@@ -194,11 +194,11 @@ export default function GaleriaParallax() {
             >
               {/* Eyebrow número */}
               <div className="inline-flex items-center gap-3 mb-6">
-                <span className="block h-px w-8 bg-sand/70" />
-                <span className="font-josefin text-[10px] tracking-w3 text-sand uppercase">
+                <span className="block h-px w-8 bg-gold/70" />
+                <span className="font-josefin text-[10px] tracking-w3 text-gold uppercase">
                   {String(i + 1).padStart(2, "0")} · Veríssimo
                 </span>
-                <span className="block h-px w-8 bg-sand/70" />
+                <span className="block h-px w-8 bg-gold/70" />
               </div>
 
               {/* Headline */}

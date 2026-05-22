@@ -14,24 +14,24 @@ html {
 }
 
 body {
-  background: #2A251D;
-  color: #F2EDE6;
+  background: #1C1917;
+  color: #FAFAF9;
   overflow-x: clip;
   hyphens: none;
   -webkit-hyphens: none;
   word-break: normal;
 }
 
+::selection { background: #CA8A04; color: #1C1917; }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #1C1917; }
+::-webkit-scrollbar-thumb { background: #CA8A04; }
+
 h1,h2,h3,h4,h5,h6,p,span,a,li,div,button {
   hyphens: none;
   -webkit-hyphens: none;
 }
 
-::selection { background: #7FA8B0; color: #090C0C; }
-
-::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-track { background: #090C0C; }
-::-webkit-scrollbar-thumb { background: #D9CDB8; }
 
 /* Loading screen words */
 @keyframes role-fade-in {

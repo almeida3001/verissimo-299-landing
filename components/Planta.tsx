@@ -37,7 +37,7 @@ export default function Planta() {
           <h2 className="font-outfit font-extralight text-5xl md:text-6xl text-cream leading-[0.92] tracking-tight mb-6">
             Pavimento
             <br />
-            <span className="font-cormorant italic text-sand">Tipo</span>
+            <span className="font-cormorant italic text-gold">Tipo</span>
           </h2>
 
           <p className="font-josefin text-sm text-cream/55 leading-relaxed mb-10 max-w-md">

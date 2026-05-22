@@ -80,7 +80,7 @@ export default function NavBar() {
         {/* CTA pill — sand glow */}
         <a
           href="#interesse"
-          className="group relative inline-flex items-center gap-1.5 font-josefin text-[10px] sm:text-[11px] tracking-w2 uppercase rounded-full px-4 sm:px-5 py-2 text-bg bg-sand hover:bg-cream transition-all duration-400"
+          className="group relative inline-flex items-center gap-1.5 font-josefin text-[10px] sm:text-[11px] tracking-w2 uppercase rounded-full px-4 sm:px-5 py-2 text-bg bg-gold hover:bg-cream transition-all duration-400"
         >
           <span>Falar com vendas</span>
           <ArrowUpRight size={11} className="group-hover:rotate-45 transition-transform duration-400" />

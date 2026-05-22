@@ -40,19 +40,19 @@ export default function LeadForm() {
         >
           <div className="inline-flex items-center gap-3 mb-8">
             <motion.span
-              className="block h-px bg-sand"
+              className="block h-px bg-gold"
               initial={{ width: 0 }}
               whileInView={{ width: 40 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.2 }}
             />
-            <span className="font-josefin text-[10px] tracking-w3 text-sand uppercase">Registre seu interesse</span>
+            <span className="font-josefin text-[10px] tracking-w3 text-gold uppercase">Registre seu interesse</span>
           </div>
 
           <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
             Conhecer
             <br />
-            <span className="font-cormorant italic text-sand">o Veríssimo</span>
+            <span className="font-cormorant italic text-gold">o Veríssimo</span>
           </h2>
 
           <p className="font-josefin text-sm text-cream/55 leading-relaxed max-w-md mb-10">
@@ -66,16 +66,16 @@ export default function LeadForm() {
               href="https://wa.me/5521991024201"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 font-josefin text-sm text-cream/70 hover:text-sand transition-colors duration-300 group"
+              className="flex items-center gap-3 font-josefin text-sm text-cream/70 hover:text-gold transition-colors duration-300 group"
             >
-              <span className="w-6 h-px bg-white/20 group-hover:bg-sand transition-colors duration-300" />
+              <span className="w-6 h-px bg-white/20 group-hover:bg-gold transition-colors duration-300" />
               WhatsApp: (21) 99102-4201
             </a>
             <a
               href="mailto:contato@absolutoengenharia.com.br"
-              className="flex items-center gap-3 font-josefin text-sm text-cream/70 hover:text-sand transition-colors duration-300 group"
+              className="flex items-center gap-3 font-josefin text-sm text-cream/70 hover:text-gold transition-colors duration-300 group"
             >
-              <span className="w-6 h-px bg-white/20 group-hover:bg-sand transition-colors duration-300" />
+              <span className="w-6 h-px bg-white/20 group-hover:bg-gold transition-colors duration-300" />
               contato@absolutoengenharia.com.br
             </a>
           </div>
@@ -92,9 +92,9 @@ export default function LeadForm() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="border border-sand/30 bg-white/[0.03] p-10 text-center"
+              className="border border-gold/30 bg-white/[0.03] p-10 text-center"
             >
-              <p className="font-cormorant italic text-3xl text-sand mb-3">Obrigado!</p>
+              <p className="font-cormorant italic text-3xl text-gold mb-3">Obrigado!</p>
               <p className="font-josefin text-sm text-cream/55">
                 Você será direcionado ao nosso WhatsApp. Retornamos em breve.
               </p>
@@ -115,7 +115,7 @@ export default function LeadForm() {
                   value={form.nome}
                   onChange={(e) => setForm({ ...form, nome: e.target.value })}
                   placeholder="Seu nome"
-                  className="w-full bg-transparent border-b border-white/15 focus:border-sand outline-none py-3 font-josefin text-sm text-cream placeholder:text-cream/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-white/15 focus:border-gold outline-none py-3 font-josefin text-sm text-cream placeholder:text-cream/20 transition-colors duration-300"
                 />
               </div>
 
@@ -130,7 +130,7 @@ export default function LeadForm() {
                   value={form.telefone}
                   onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                   placeholder="(21) 99999-9999"
-                  className="w-full bg-transparent border-b border-white/15 focus:border-sand outline-none py-3 font-josefin text-sm text-cream placeholder:text-cream/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-white/15 focus:border-gold outline-none py-3 font-josefin text-sm text-cream placeholder:text-cream/20 transition-colors duration-300"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export default function LeadForm() {
                       onClick={() => setForm({ ...form, interesse: op.value })}
                       className={`flex-1 py-3 font-josefin text-[11px] tracking-w1 uppercase border transition-all duration-300 ${
                         form.interesse === op.value
-                          ? "border-sand text-sand bg-sand/10"
+                          ? "border-gold text-gold bg-gold/10"
                           : "border-white/15 text-cream/40 hover:border-white/30 hover:text-cream/70"
                       }`}
                     >
@@ -163,7 +163,7 @@ export default function LeadForm() {
               {/* Submit */}
               <button
                 type="submit"
-                className="group w-full flex items-center justify-center gap-3 bg-sand text-bg font-josefin text-[11px] tracking-w3 uppercase py-4 hover:bg-cream transition-all duration-300"
+                className="group w-full flex items-center justify-center gap-3 bg-gold text-bg font-josefin text-[11px] tracking-w3 uppercase py-4 hover:bg-cream transition-all duration-300"
               >
                 Quero conhecer o Veríssimo
                 <ArrowRight size={12} className="group-hover:translate-x-1.5 transition-transform duration-300" />
