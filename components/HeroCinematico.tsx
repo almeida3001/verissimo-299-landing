@@ -1,51 +1,61 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
+const backgrounds = [
+  "/images/fachada-frontal.png",
+  "/images/vista-lateral.png",
+  "/images/entrada-terreo.png",
+  "/images/jardim-aereo.png",
+];
 
 const roles = ["privilegiada", "exclusiva", "contemporânea", "à beira-mar"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroCinematico() {
+  const [bgIndex, setBgIndex] = useState(0);
   const [roleIndex, setRoleIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => setBgIndex((i) => (i + 1) % backgrounds.length), 7000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2200);
     return () => clearInterval(id);
   }, []);
 
-  /* iOS Safari fix — força play após mount */
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    v.play().catch(() => {});
-  }, []);
-
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo">
+    <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo 299">
 
-      {/* ── Background — Vídeo fullscreen ── */}
+      {/* ── Background — Ken Burns crossfade ── */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/videos/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover animate-hero-zoom"
-        >
-          <source src="/videos/hero.webm" type="video/webm" />
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={bgIndex}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ opacity: { duration: 2.4 }, scale: { duration: 8, ease: "linear" } }}
+          >
+            <Image
+              src={backgrounds[bgIndex]}
+              alt="Veríssimo 299"
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/20" />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%)" }}
@@ -138,6 +148,29 @@ export default function HeroCinematico() {
           </a>
         </motion.div>
       </div>
+
+      {/* ── Background indicator dots ── */}
+      <motion.div
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.8 }}
+      >
+        {backgrounds.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setBgIndex(i)}
+            aria-label={`Imagem ${i + 1}`}
+            className="block py-2 cursor-pointer"
+          >
+            <span
+              className={`block h-px transition-all duration-500 ${
+                bgIndex === i ? "w-10 bg-sand" : "w-5 bg-cream/25 hover:bg-cream/50"
+              }`}
+            />
+          </button>
+        ))}
+      </motion.div>
 
       {/* ── Scroll indicator ── */}
       <motion.div
