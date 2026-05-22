@@ -57,7 +57,6 @@ export default function NavBar() {
         >
           <span className="font-outfit font-extralight text-sm text-cream tracking-tight">
             Veríssimo
-            <span className="font-cormorant italic text-sand/80 ml-1">299</span>
           </span>
         </a>
 

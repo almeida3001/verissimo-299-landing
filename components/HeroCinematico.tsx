@@ -96,7 +96,6 @@ export default function HeroCinematico() {
             style={{ willChange: "transform" }}
           >
             Veríssimo
-            <span className="italic font-light text-sand/90"> 299</span>
           </motion.h1>
         </div>
 
