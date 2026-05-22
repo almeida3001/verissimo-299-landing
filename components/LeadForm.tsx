@@ -20,11 +20,12 @@ export default function LeadForm() {
   return (
     <section className="bg-bg py-28 md:py-36 px-6 md:px-16 relative overflow-hidden" id="interesse">
 
-      {/* Background sutil */}
+      {/* Gradient terroso */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(ellipse at 70% 50%, #D9CDB8 0%, transparent 60%)",
+          background:
+            "radial-gradient(ellipse 70% 60% at 80% 30%, rgba(184, 135, 78, 0.15) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 20% 70%, rgba(217, 205, 184, 0.08) 0%, transparent 55%)",
         }}
       />
 

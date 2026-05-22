@@ -5,8 +5,16 @@ import { motion } from "motion/react";
 
 export default function Planta() {
   return (
-    <section className="bg-bg py-28 md:py-36 px-6 md:px-16" id="planta">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section className="relative bg-bg py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="planta">
+      {/* Gradient terroso sutil */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 90% 20%, rgba(184, 135, 78, 0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 10% 80%, rgba(217, 205, 184, 0.08) 0%, transparent 55%)",
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* Texto */}
         <motion.div
