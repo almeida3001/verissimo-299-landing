@@ -35,8 +35,8 @@ export default function Localizacao() {
             transition={{ duration: 2.4, ease: "easeOut" }}
           >
             <Image
-              src="/images/localizacao-aerea.jpg"
-              alt="Vista aérea da Barra da Tijuca Veríssimo"
+              src="/images/bairro.jpg"
+              alt="Bairro da Barra da Tijuca · entorno do Veríssimo"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
