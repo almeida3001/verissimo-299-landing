@@ -32,6 +32,7 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://verissimo-299-landing.vercel.app"),
   title: "Veríssimo 299 | Boutique Residencial na Barra da Tijuca",
   description:
     "Boutique residencial a poucos metros da praia da Barra da Tijuca. Térreo + 3 pavimentos assinados pelo Studio R Arquitetura. Apartamentos de 2 quartos e coberturas com varandas amplas.",
