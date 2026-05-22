@@ -294,27 +294,53 @@ export default function Empreendimento() {
             </motion.div>
           </div>
 
-          {/* Stats */}
+          {/* Stats — Informações técnicas do empreendimento */}
           <motion.div
-            className="border-y border-elevated/50 grid grid-cols-3 md:grid-cols-6 gap-px bg-elevated/30 mb-20"
+            className="mb-20"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {[
-              { value: "T + 3",  label: "Pavimentos"        },
-              { value: "6",      label: "Unidades no total" },
-              { value: "2Q",     label: "Tipologia padrão"  },
-              { value: "Cob.",   label: "Coberturas"        },
-              { value: "2026",   label: "Entrega"           },
-              { value: "Studio R", label: "Arquitetura"     },
-            ].map((s) => (
-              <div key={s.label} className="bg-bg px-4 py-8 text-center">
-                <p className="font-outfit font-extralight text-2xl md:text-3xl text-cream mb-1">{s.value}</p>
-                <p className="font-josefin text-[9px] tracking-w2 text-muted uppercase">{s.label}</p>
+            <div className="inline-flex items-center gap-3 mb-8">
+              <span className="block h-px w-8 bg-sea" />
+              <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
+                Informações técnicas
+              </span>
+            </div>
+
+            {/* Destaque principal — 6 apartamentos */}
+            <div className="grid md:grid-cols-12 gap-px bg-elevated/30 border-y border-elevated/50">
+              {/* Hero stat — Apenas 6 unidades */}
+              <div className="md:col-span-5 bg-bg px-6 py-10 md:py-14 flex flex-col justify-center">
+                <p className="font-outfit font-extralight text-7xl md:text-8xl lg:text-9xl text-sea leading-none mb-3">
+                  06
+                </p>
+                <p className="font-cormorant italic text-xl md:text-2xl text-cream/85">
+                  apartamentos no prédio inteiro
+                </p>
+                <p className="font-josefin text-[10px] tracking-w2 text-muted uppercase mt-2">
+                  2 por andar · privacidade real
+                </p>
               </div>
-            ))}
+
+              {/* Demais stats */}
+              <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-2 divide-x divide-y divide-elevated/40">
+                {[
+                  { value: "2 quartos",        label: "Tipologia padrão"          },
+                  { value: "Coberturas",       label: "Privativas com terraço"    },
+                  { value: "Térreo + 3",       label: "Pavimentos"                },
+                  { value: "Entrega 2026",     label: "Pré-lançamento"            },
+                  { value: "Studio R",         label: "Arquitetura & Interiores"  },
+                  { value: "Absoluto",         label: "Construção e Incorporação" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-bg px-5 py-6">
+                    <p className="font-outfit font-light text-xl md:text-2xl text-cream leading-tight mb-1">{s.value}</p>
+                    <p className="font-josefin text-[9px] tracking-w2 text-muted uppercase">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Acabamentos */}
