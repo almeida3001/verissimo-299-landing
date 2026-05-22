@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -24,9 +25,17 @@ export default function SobreAbsoluto() {
             </span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.95] tracking-tight mb-8">
-            Absoluto
-          </h2>
+          {/* Logo Absoluto */}
+          <div className="mb-8">
+            <Image
+              src="/images/logo-absoluto.png"
+              alt="Absoluto Engenharia"
+              width={280}
+              height={80}
+              className="h-16 md:h-20 w-auto object-contain"
+              priority={false}
+            />
+          </div>
 
           {/* Destaque dos 10 anos */}
           <div className="flex items-center gap-4 mb-8">

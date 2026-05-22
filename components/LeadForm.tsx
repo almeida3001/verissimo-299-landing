@@ -20,14 +20,20 @@ export default function LeadForm() {
   return (
     <section className="bg-bg py-28 md:py-36 px-6 md:px-16 relative overflow-hidden" id="interesse">
 
-      {/* Gradient bege */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 60% at 80% 30%, rgba(232, 220, 196, 0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 20% 70%, rgba(217, 205, 184, 0.06) 0%, transparent 55%)",
-        }}
-      />
+      {/* Background imagem entrada com opacidade */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img
+          src="/images/leadform-bg.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        {/* Overlay escuro pra garantir legibilidade */}
+        <div className="absolute inset-0 bg-bg/70" />
+        <div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse at center, transparent 0%, rgba(28,25,23,0.5) 100%)" }}
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto relative grid md:grid-cols-2 gap-16 items-center">
 
