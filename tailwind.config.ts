@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg:      "#090C0C",
-        surface: "#0F1518",
+        bg:      "#100C08",
+        surface: "#1A140E",
         cream:   "#F2EDE6",
-        muted:   "#8A9EA3",
+        muted:   "#9C8B79",
         sand:    "#D9CDB8",
         sea:     "#7FA8B0",
         bronze:  "#B8874E",
+        terra:   "#3D2E22",
+        warmsand: "#E8DCC4",
       },
       fontFamily: {
         cormorant: ["var(--font-cormorant)", "serif"],

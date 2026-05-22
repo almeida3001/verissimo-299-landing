@@ -13,8 +13,16 @@ const diferenciais = [
 
 export default function Empreendimento() {
   return (
-    <section className="bg-bg py-28 md:py-36 px-6 md:px-16" id="empreendimento">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative bg-bg py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="empreendimento">
+      {/* Sutile gradient terroso de fundo */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse at 20% 0%, rgba(184, 135, 78, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(217, 205, 184, 0.05) 0%, transparent 50%)",
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-16 mb-24">
@@ -40,7 +48,7 @@ export default function Empreendimento() {
             <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
               Veríssimo
               <br />
-              <span className="font-cormorant italic font-light text-sand">299</span>
+              <span className="font-cormorant italic font-light text-sand">residence</span>
             </h2>
           </motion.div>
 
