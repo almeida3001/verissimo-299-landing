@@ -52,14 +52,14 @@ export default function Empreendimento() {
             loop
             playsInline
             preload="metadata"
-            poster="/videos/videobanner2-poster.jpg"
+            poster="/videos/videobanner3-poster.jpg"
             controls={playing}
             className="absolute inset-0 w-full h-full object-cover"
             onPause={() => setPlaying(false)}
             onPlay={() => setPlaying(true)}
             onEnded={() => setPlaying(false)}
           >
-            <source src="/videos/videobanner2.mp4" type="video/mp4" />
+            <source src="/videos/videobanner3.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay com botão play — só quando não tá tocando */}
