@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Play } from "lucide-react";
 
@@ -163,53 +164,78 @@ export default function Empreendimento() {
 
         <div className="relative max-w-6xl mx-auto">
 
-          {/* Header bloco descritivo */}
-          <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20">
+          {/* Header bloco descritivo — Imagem à esquerda + Texto completo à direita */}
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
 
-            {/* Lado esquerdo — Nome + tag */}
+            {/* Lado esquerdo — Imagem do Veríssimo */}
             <motion.div
-              className="md:col-span-5"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              className="relative overflow-hidden"
+              style={{ aspectRatio: "4/5" }}
+              initial={{ opacity: 0, x: -32 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="inline-flex items-center gap-3 mb-8">
+              <motion.div
+                className="absolute inset-0"
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2.4, ease: "easeOut" }}
+              >
+                <Image
+                  src="/images/fachada-frontal.png"
+                  alt="Fachada principal Veríssimo Residence"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+
+              {/* Vignette sutil */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.35) 100%)" }}
+              />
+            </motion.div>
+
+            {/* Lado direito — Eyebrow + Título + Descrição completa */}
+            <motion.div
+              initial={{ opacity: 0, x: 32 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-3 mb-6">
                 <span className="block h-px w-8 bg-sea" />
                 <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
                   O Projeto
                 </span>
               </div>
 
-              <h3 className="font-outfit font-extralight text-5xl md:text-6xl text-cream leading-[0.95] tracking-tight">
+              {/* Título */}
+              <h3 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-2">
                 Veríssimo
-                <span
-                  className="block font-cormorant italic font-light text-sea text-2xl md:text-3xl -mt-1"
-                  style={{ letterSpacing: "0.4em" }}
-                >
-                  Residence
-                </span>
               </h3>
-            </motion.div>
-
-            {/* Lado direito — Descrição detalhada */}
-            <motion.div
-              className="md:col-span-7 space-y-6"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-            >
-              <p className="font-cormorant italic text-2xl md:text-3xl text-cream/90 leading-snug">
-                Um projeto residencial de baixa escala que reescreve o luxo na Barra
-                da Tijuca.
+              <p
+                className="font-cormorant italic font-light text-cream text-base md:text-lg mb-8"
+                style={{ letterSpacing: "0.4em" }}
+              >
+                Residence
               </p>
 
-              <div className="space-y-4 font-josefin text-base text-cream/65 leading-relaxed">
+              {/* Sub italic */}
+              <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
+                Um projeto residencial de baixa escala que reescreve o luxo na Barra da Tijuca.
+              </p>
+
+              {/* Parágrafos descritivos */}
+              <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed">
                 <p>
                   Localizado na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
                   no coração da Barra da Tijuca, o Veríssimo Residence é assinado pelo{" "}
-                  <span className="text-cream">Studio R Arquitetura & Interiores</span> —
+                  <span className="text-cream">Studio R Arquitetura & Interiores</span>,
                   responsável por alguns dos endereços mais desejados do litoral carioca.
                 </p>
                 <p>
