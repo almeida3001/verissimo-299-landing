@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function SobreAbsoluto() {
   return (
-    <section className="relative bg-warmlight text-textdark py-20 md:py-32 px-6 md:px-16 overflow-hidden">
+    <section className="relative bg-bg text-cream py-20 md:py-32 px-6 md:px-16 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center">
 
@@ -24,7 +24,7 @@ export default function SobreAbsoluto() {
             </span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-textdark leading-[0.95] tracking-tight mb-8">
+          <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.95] tracking-tight mb-8">
             Absoluto
           </h2>
 
@@ -37,7 +37,7 @@ export default function SobreAbsoluto() {
               <p className="font-josefin text-[10px] tracking-w2 text-sea uppercase leading-tight">
                 Anos de mercado
               </p>
-              <p className="font-josefin text-[10px] tracking-w1 text-muteddark/70 mt-1">
+              <p className="font-josefin text-[10px] tracking-w1 text-cream/55 mt-1">
                 2016 — 2027
               </p>
             </div>
@@ -52,38 +52,38 @@ export default function SobreAbsoluto() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-cormorant italic text-xl md:text-2xl text-textdark/90 leading-snug">
+          <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug">
             Uma década entregando no prazo, no Rio de Janeiro.
           </p>
 
-          <div className="space-y-4 font-josefin text-sm md:text-base text-muteddark leading-relaxed max-w-2xl">
+          <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-2xl">
             <p>
-              Fundada em <span className="text-textdark font-medium">2016</span>, a Absoluto
+              Fundada em <span className="text-cream font-medium">2016</span>, a Absoluto
               Engenharia e Construções completa uma década de atuação no Rio de
-              Janeiro com <span className="text-textdark font-medium">mais de 50 obras entregues</span>:
+              Janeiro com <span className="text-cream font-medium">mais de 50 obras entregues</span>:
               residenciais, comerciais, industriais e incorporações. Um histórico
               sólido construído projeto a projeto.
             </p>
             <p>
               No Veríssimo Residence, a Absoluto assume a{" "}
-              <span className="text-textdark font-medium">construção e incorporação</span> do
+              <span className="text-cream font-medium">construção e incorporação</span> do
               empreendimento, garantindo o padrão técnico, prazo e acabamento
               que definem cada obra da empresa.
             </p>
           </div>
 
           {/* Stats Absoluto */}
-          <div className="grid grid-cols-3 gap-px bg-linedark border-y border-linedark mt-8">
+          <div className="grid grid-cols-3 gap-px bg-elevated/30 border-y border-elevated/50 mt-8">
             {[
               { value: "10",  label: "Anos de mercado"   },
               { value: "50+", label: "Obras entregues"   },
               { value: "RJ",  label: "Rio de Janeiro"    },
             ].map((s) => (
-              <div key={s.label} className="bg-warmlight px-4 py-6 text-center">
-                <p className="font-outfit font-extralight text-3xl md:text-4xl text-textdark leading-none mb-1">
+              <div key={s.label} className="bg-bg px-4 py-6 text-center">
+                <p className="font-outfit font-extralight text-3xl md:text-4xl text-cream leading-none mb-1">
                   {s.value}
                 </p>
-                <p className="font-josefin text-[10px] tracking-w2 text-muteddark/70 uppercase">
+                <p className="font-josefin text-[10px] tracking-w2 text-cream/55 uppercase">
                   {s.label}
                 </p>
               </div>

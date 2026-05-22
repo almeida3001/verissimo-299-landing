@@ -19,7 +19,7 @@ export default function Empreendimento() {
   }
 
   return (
-    <section className="relative bg-warmlight text-textdark overflow-hidden" id="empreendimento">
+    <section className="relative bg-bg overflow-hidden" id="empreendimento">
 
       {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
       <div className="relative grid md:grid-cols-2 items-center gap-0">
@@ -100,26 +100,26 @@ export default function Empreendimento() {
           </h2>
 
           {/* Descrição — apenas 1 parágrafo */}
-          <div className="font-josefin text-sm md:text-base text-muteddark leading-relaxed max-w-xl border-t border-linedark pt-8">
+          <div className="font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
-              O <span className="text-textdark">Veríssimo Residence</span> nasce em um
+              O <span className="text-cream">Veríssimo Residence</span> nasce em um
               dos trechos mais residenciais da Barra — entre o calçadão da Praia do
               Pepê e a esquina da Av. Olegário Maciel, na{" "}
-              <span className="text-textdark">Av. Érico Veríssimo, 299</span>. Assinado
-              pelo <span className="text-textdark">Studio R Arquitetura & Interiores</span>,
+              <span className="text-cream">Av. Érico Veríssimo, 299</span>. Assinado
+              pelo <span className="text-cream">Studio R Arquitetura & Interiores</span>,
               um endereço para morar com tempo.
             </p>
           </div>
 
           {/* Pontos próximos — lista compacta */}
-          <div className="mt-10 pt-8 border-t border-linedark">
+          <div className="mt-10 pt-8 border-t border-elevated/50">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="block h-px w-8 bg-sea" />
               <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
                 Pontos próximos
               </span>
             </div>
-            <div className="space-y-px bg-linedark">
+            <div className="space-y-px bg-elevated/30">
               {[
                 { label: "Praia do Pepê",         dist: "4 min a pé" },
                 { label: "Av. Olegário Maciel",   dist: "3 min a pé" },
@@ -128,17 +128,17 @@ export default function Empreendimento() {
               ].map((p, i) => (
                 <div
                   key={p.label}
-                  className="flex items-center justify-between gap-4 bg-warmlight px-4 py-3"
+                  className="flex items-center justify-between gap-4 bg-bg px-4 py-3"
                 >
                   <div className="flex items-center gap-3">
                     <span className="font-josefin text-[9px] tracking-w2 text-sea uppercase w-6">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-outfit font-light text-sm text-textdark">
+                    <span className="font-outfit font-light text-sm text-cream">
                       {p.label}
                     </span>
                   </div>
-                  <span className="font-cormorant italic text-sm text-muteddark/70 whitespace-nowrap">
+                  <span className="font-cormorant italic text-sm text-cream/55 whitespace-nowrap">
                     {p.dist}
                   </span>
                 </div>
@@ -192,30 +192,30 @@ export default function Empreendimento() {
               </p>
 
               {/* Sub italic */}
-              <p className="font-cormorant italic text-xl md:text-2xl text-textdark/90 leading-snug mb-6">
+              <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
                 Três andares. Seis apartamentos. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
               </p>
 
               {/* Parágrafos descritivos */}
-              <div className="space-y-4 font-josefin text-sm md:text-base text-muteddark leading-relaxed">
+              <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed">
                 <p>
-                  Localizado na <span className="text-textdark">Av. Érico Veríssimo, 299</span>,
+                  Localizado na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
                   no coração da Barra da Tijuca, o Veríssimo Residence é assinado pelo{" "}
-                  <span className="text-textdark">Studio R Arquitetura & Interiores</span>,
+                  <span className="text-cream">Studio R Arquitetura & Interiores</span>,
                   responsável por alguns dos endereços mais desejados do litoral carioca.
                 </p>
                 <p>
-                  São apenas <span className="text-textdark">seis unidades no total</span>{" "}
-                  — duas por andar, em <span className="text-textdark">três pavimentos sobre
+                  São apenas <span className="text-cream">seis unidades no total</span>{" "}
+                  — duas por andar, em <span className="text-cream">três pavimentos sobre
                   térreo livre</span>. Apartamentos de 2 quartos e coberturas privativas
                   com varandas amplas, paisagismo tropical integrado e iluminação cênica
                   em toda a circulação.
                 </p>
                 <p>
-                  A fachada combina <span className="text-textdark">ripado de madeira natural</span>,
-                  vidro temperado em esquadrias generosas e <span className="text-textdark">pedra
+                  A fachada combina <span className="text-cream">ripado de madeira natural</span>,
+                  vidro temperado em esquadrias generosas e <span className="text-cream">pedra
                   portuguesa</span> no embasamento. Coroada por um{" "}
-                  <span className="text-textdark">pergolado superior em bambu</span> que
+                  <span className="text-cream">pergolado superior em bambu</span> que
                   filtra a luz e marca a silhueta do edifício no skyline da Barra.
                 </p>
               </div>
@@ -270,22 +270,22 @@ export default function Empreendimento() {
             </div>
 
             {/* Destaque principal — 6 apartamentos */}
-            <div className="grid md:grid-cols-12 gap-px bg-linedark border-y border-linedark">
+            <div className="grid md:grid-cols-12 gap-px bg-elevated/30 border-y border-elevated/50">
               {/* Hero stat — Apenas 6 unidades */}
-              <div className="md:col-span-5 bg-warmlight px-6 py-10 md:py-14 flex flex-col justify-center">
+              <div className="md:col-span-5 bg-bg px-6 py-10 md:py-14 flex flex-col justify-center">
                 <p className="font-outfit font-extralight text-7xl md:text-8xl lg:text-9xl text-sea leading-none mb-3">
                   06
                 </p>
-                <p className="font-cormorant italic text-xl md:text-2xl text-textdark/85">
+                <p className="font-cormorant italic text-xl md:text-2xl text-cream/85">
                   apartamentos no prédio inteiro
                 </p>
-                <p className="font-josefin text-[10px] tracking-w2 text-muteddark uppercase mt-2">
+                <p className="font-josefin text-[10px] tracking-w2 text-cream/65 uppercase mt-2">
                   2 por andar · privacidade real
                 </p>
               </div>
 
               {/* Demais stats */}
-              <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-2 divide-x divide-y divide-linedark/70">
+              <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-2 divide-x divide-y divide-elevated/40">
                 {[
                   { value: "2 quartos",        label: "Tipologia padrão"          },
                   { value: "Coberturas",       label: "Privativas com terraço"    },
@@ -294,9 +294,9 @@ export default function Empreendimento() {
                   { value: "Studio R",         label: "Arquitetura & Interiores"  },
                   { value: "Absoluto",         label: "Construção e Incorporação" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-warmlight px-5 py-6">
+                  <div key={s.label} className="bg-bg px-5 py-6">
                     <p className="font-outfit font-light text-xl md:text-2xl text-cream leading-tight mb-1">{s.value}</p>
-                    <p className="font-josefin text-[9px] tracking-w2 text-muteddark uppercase">{s.label}</p>
+                    <p className="font-josefin text-[9px] tracking-w2 text-cream/65 uppercase">{s.label}</p>
                   </div>
                 ))}
               </div>

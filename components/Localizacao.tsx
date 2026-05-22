@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 export default function Localizacao() {
   return (
-    <section className="relative bg-bg py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
+    <section className="relative bg-warmlight text-textdark py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
 
       <div
         className="absolute inset-0 pointer-events-none"
@@ -57,7 +57,7 @@ export default function Localizacao() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <MapPin size={12} className="text-sea flex-shrink-0" />
-            <span className="font-josefin text-[10px] tracking-w2 text-cream/85 uppercase">
+            <span className="font-josefin text-[10px] tracking-w2 text-textdark/85 uppercase">
               Av. Érico Veríssimo, 299 · Barra da Tijuca
             </span>
           </motion.div>
@@ -77,25 +77,25 @@ export default function Localizacao() {
             </span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] tracking-tight mb-8 text-balance">
+          <h2 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-textdark leading-[1.05] tracking-tight mb-8 text-balance">
             Construa seu legado
             <br />
-            <span className="font-cormorant italic text-cream">a poucos passos do mar.</span>
+            <span className="font-cormorant italic text-textdark">a poucos passos do mar.</span>
           </h2>
 
-          <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-8 max-w-md">
+          <p className="font-cormorant italic text-lg md:text-xl text-textdark/85 leading-snug mb-8 max-w-md">
             Localizado na Av. Érico Veríssimo, 299, entre o calçadão da Praia do
             Pepê e a esquina da Av. Olegário Maciel — o coração mais residencial
             da Barra da Tijuca.
           </p>
 
-          <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-lg mb-8">
+          <div className="space-y-4 font-josefin text-sm md:text-base text-muteddark leading-relaxed max-w-lg mb-8">
             <p>
               Entre a praia, o calçadão arborizado e a vida cotidiana de quem
               conhece a Barra por dentro, você estará cercado pelos principais
-              pontos do bairro: a <span className="text-cream">Praia do Pepê</span> a
-              quatro minutos a pé, a <span className="text-cream">Av. Olegário
-              Maciel</span> na esquina, o <span className="text-cream">Bosque da
+              pontos do bairro: a <span className="text-textdark">Praia do Pepê</span> a
+              quatro minutos a pé, a <span className="text-textdark">Av. Olegário
+              Maciel</span> na esquina, o <span className="text-textdark">Bosque da
               Barra</span>, o supermercado, a academia e os melhores restaurantes
               da orla.
             </p>
@@ -105,7 +105,7 @@ export default function Localizacao() {
             </p>
           </div>
 
-          <p className="font-cormorant italic text-base md:text-lg text-cream/75 leading-snug mb-10 max-w-md border-l-2 border-sea/40 pl-4">
+          <p className="font-cormorant italic text-base md:text-lg text-textdark/75 leading-snug mb-10 max-w-md border-l-2 border-sea/40 pl-4">
             Av. Érico Veríssimo, 299: onde discrição, localização e estilo de
             vida encontram o seu endereço.
           </p>

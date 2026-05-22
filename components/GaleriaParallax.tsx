@@ -136,7 +136,7 @@ export default function GaleriaParallax() {
       id="galeria"
       aria-label="Galeria Veríssimo"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-bg">
+      <div className="sticky top-0 h-screen overflow-hidden bg-warmlight">
 
         {/* Imagens stack */}
         {slides.map((s, i) => (
