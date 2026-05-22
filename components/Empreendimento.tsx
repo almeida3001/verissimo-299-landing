@@ -22,10 +22,10 @@ export default function Empreendimento() {
     <section className="relative bg-bg overflow-hidden" id="empreendimento">
 
       {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
-      <div className="relative grid md:grid-cols-2 items-stretch">
+      <div className="relative grid md:grid-cols-2 items-stretch min-h-[70vh] md:min-h-[80vh]">
 
-        {/* Vídeo (50% esquerda) — aspect 16:9 respeita proporção do filme */}
-        <div className="relative overflow-hidden bg-bg" style={{ aspectRatio: "16/10" }}>
+        {/* Vídeo (50% esquerda) */}
+        <div className="relative overflow-hidden bg-bg min-h-[50vh] md:min-h-0">
           <video
             ref={videoRef}
             muted
