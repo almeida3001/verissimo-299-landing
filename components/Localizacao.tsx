@@ -49,14 +49,14 @@ export default function Localizacao() {
 
           <motion.div
             className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6 md:right-6 flex items-center gap-2 px-4 py-2.5 rounded-full"
-            style={{ background: "rgba(36, 30, 22, 0.65)", backdropFilter: "blur(16px) saturate(160%)" }}
+            style={{ background: "rgba(28, 25, 23, 0.85)", backdropFilter: "blur(20px) saturate(180%)" }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <MapPin size={12} className="text-sea flex-shrink-0" />
-            <span className="font-josefin text-[10px] tracking-w2 text-textdark/85 uppercase">
+            <span className="font-josefin text-[10px] tracking-w2 text-cream uppercase">
               Av. Érico Veríssimo, 299 · Barra da Tijuca
             </span>
           </motion.div>
