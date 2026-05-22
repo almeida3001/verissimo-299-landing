@@ -63,7 +63,7 @@ export default function Localizacao() {
           </motion.div>
         </motion.div>
 
-        {/* Conteúdo (direita) — simplificado, sem duplicação de lista */}
+        {/* Conteúdo — rico, estilo "Sobre o Bairro" Bruma */}
         <motion.div
           initial={{ opacity: 0, x: 32 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -73,24 +73,41 @@ export default function Localizacao() {
           <div className="inline-flex items-center gap-3 mb-8">
             <span className="block h-px w-10 bg-sea" />
             <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
-              Localização
+              Sobre o bairro
             </span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
-            A Barra que poucos
+          <h2 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] tracking-tight mb-8 text-balance">
+            Construa seu legado
             <br />
-            <span className="font-cormorant italic text-cream">conhecem por dentro.</span>
+            <span className="font-cormorant italic text-cream">a poucos passos do mar.</span>
           </h2>
 
-          <p className="font-cormorant italic text-lg md:text-xl text-cream/75 leading-snug mb-10 max-w-md">
-            Cinco minutos a pé do mar. O resto, à sua porta.
+          <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-8 max-w-md">
+            Localizado na Av. Érico Veríssimo, 299, entre o calçadão da Praia do
+            Pepê e a esquina da Av. Olegário Maciel — o coração mais residencial
+            da Barra da Tijuca.
           </p>
 
-          <p className="font-josefin text-sm text-cream/55 leading-relaxed max-w-md mb-10">
-            Entre o calçadão da Praia do Pepê e a esquina da Av. Olegário Maciel,
-            o eixo mais residencial da Barra — onde estão o mercado, a padaria,
-            as academias e a vida cotidiana de quem conhece o bairro de verdade.
+          <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-lg mb-8">
+            <p>
+              Entre a praia, o calçadão arborizado e a vida cotidiana de quem
+              conhece a Barra por dentro, você estará cercado pelos principais
+              pontos do bairro: a <span className="text-cream">Praia do Pepê</span> a
+              quatro minutos a pé, a <span className="text-cream">Av. Olegário
+              Maciel</span> na esquina, o <span className="text-cream">Bosque da
+              Barra</span>, o supermercado, a academia e os melhores restaurantes
+              da orla.
+            </p>
+            <p>
+              Tudo o que faz deste pedaço da Barra o mais desejado por quem
+              já conhece — e o melhor segredo guardado de quem ainda vai descobrir.
+            </p>
+          </div>
+
+          <p className="font-cormorant italic text-base md:text-lg text-cream/75 leading-snug mb-10 max-w-md border-l-2 border-sea/40 pl-4">
+            Av. Érico Veríssimo, 299: onde discrição, localização e estilo de
+            vida encontram o seu endereço.
           </p>
 
           <a
