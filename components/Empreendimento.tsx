@@ -7,7 +7,7 @@ import { Play } from "lucide-react";
 
 const diferenciais = [
   { num: "01", label: "Localização Privilegiada", desc: "A poucos passos da Praia do Pepê, no coração da Barra da Tijuca. Endereço consolidado, valorização constante." },
-  { num: "02", label: "Apenas 6 unidades",        desc: "Térreo livre e três andares acima. Duas unidades por andar. Seis vizinhos no total. O oposto da torre." },
+  { num: "02", label: "Apenas 6 unidades",        desc: "Térreo livre e três andares acima. Duas unidades por andar. Seis vizinhos no total — privacidade real entre poucos." },
   { num: "03", label: "Arquitetura Assinada",     desc: "Projeto do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
   { num: "04", label: "Fachada Atemporal",        desc: "Ripado de madeira natural, vidro temperado e pedra portuguesa. Pergolado superior em bambu integrado ao paisagismo." },
   { num: "05", label: "Iluminação Cênica",        desc: "Iluminação linear LED nas circulações, varandas e paisagismo. Atmosfera singular do amanhecer ao anoitecer." },
@@ -127,11 +127,12 @@ export default function Empreendimento() {
           {/* Descrição detalhada */}
           <div className="space-y-4 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
-              O <span className="text-cream">Veríssimo Residence</span> é um edifício
-              baixo e raro na Barra. Apenas quatro andares. Assinado pelo{" "}
-              <span className="text-cream">Studio R Arquitetura & Interiores</span>,
-              na <span className="text-cream">Av. Érico Veríssimo, 299</span>,
-              entre o calçadão da Praia do Pepê e a esquina da Olegário Maciel.
+              O <span className="text-cream">Veríssimo Residence</span> nasce em um
+              dos trechos mais residenciais da Barra — entre o calçadão da Praia do
+              Pepê e a esquina da Av. Olegário Maciel, na{" "}
+              <span className="text-cream">Av. Érico Veríssimo, 299</span>. Assinado
+              pelo <span className="text-cream">Studio R Arquitetura & Interiores</span>,
+              um endereço para morar com tempo.
             </p>
             <p>
               Apenas <span className="text-cream">três andares</span> sobre térreo
