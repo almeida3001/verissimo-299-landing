@@ -1,244 +1,213 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
-const renders = [
-  { src: "/images/fachada-frontal.png",  alt: "Fachada frontal — Veríssimo 299" },
-  { src: "/images/vista-lateral.png",    alt: "Vista lateral — Veríssimo 299" },
-  { src: "/images/entrada-terreo.png",   alt: "Jardim e entrada — Veríssimo 299" },
+const backgrounds = [
+  "/images/fachada-frontal.png",
+  "/images/vista-lateral.png",
+  "/images/entrada-terreo.png",
+  "/images/jardim-aereo.png",
 ];
 
+const roles = ["boutique", "privilegiada", "exclusiva", "à beira-mar"];
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function HeroCinematico() {
-  const sectionRef  = useRef<HTMLDivElement>(null);
-  const sceneRef    = useRef<HTMLDivElement>(null);
-  const imgRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const textRef     = useRef<HTMLDivElement>(null);
-  const counterRef  = useRef<HTMLSpanElement>(null);
-  const totalRef    = useRef<HTMLSpanElement>(null);
-  const barRef      = useRef<HTMLDivElement>(null);
-  const rafRef      = useRef<number>(0);
-  const lastP       = useRef(-1);
+  const [bgIndex, setBgIndex] = useState(0);
+  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
-    const N = renders.length;
+    const id = setInterval(() => setBgIndex((i) => (i + 1) % backgrounds.length), 7000);
+    return () => clearInterval(id);
+  }, []);
 
-    function update() {
-      const section = sectionRef.current;
-      const scene   = sceneRef.current;
-      if (!section || !scene) { rafRef.current = requestAnimationFrame(update); return; }
-
-      const rect      = section.getBoundingClientRect();
-      const totalScroll = section.offsetHeight - window.innerHeight;
-      const globalP   = Math.max(0, Math.min(1, -rect.top / totalScroll));
-
-      if (Math.abs(globalP - lastP.current) < 0.0002) {
-        rafRef.current = requestAnimationFrame(update);
-        return;
-      }
-      lastP.current = globalP;
-
-      const activeIndex = Math.min(N - 1, Math.floor(globalP * N));
-      const slideP      = globalP * N - Math.floor(globalP * N);
-
-      /* ── Image zoom scrub + crossfade ── */
-      imgRefs.current.forEach((el, i) => {
-        if (!el) return;
-        if (i === activeIndex) {
-          el.style.opacity   = "1";
-          el.style.transform = `scale(${1 + slideP * 0.25})`;
-        } else if (i === activeIndex - 1) {
-          el.style.opacity   = String(Math.max(0, 1 - slideP * 2.5));
-          el.style.transform = `scale(1.25)`;
-        } else {
-          el.style.opacity   = "0";
-          el.style.transform = `scale(1)`;
-        }
-      });
-
-      scene.style.transform = "";
-
-      /* ── Text parallax + fade ── */
-      if (textRef.current) {
-        const fadeOut = Math.min(1, slideP * 2.5);
-        textRef.current.style.transform = `translateY(${slideP * -70}px)`;
-        textRef.current.style.opacity   = String(1 - fadeOut);
-      }
-
-      /* ── Counter ── */
-      if (counterRef.current) counterRef.current.textContent = String(activeIndex + 1).padStart(2, "0");
-      if (totalRef.current)   totalRef.current.textContent   = String(N).padStart(2, "0");
-
-      /* ── Progress bar ── */
-      if (barRef.current) barRef.current.style.transform = `scaleX(${globalP})`;
-
-      rafRef.current = requestAnimationFrame(update);
-    }
-
-    rafRef.current = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(rafRef.current);
+  useEffect(() => {
+    const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2200);
+    return () => clearInterval(id);
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ height: "400vh" }} aria-label="Hero Veríssimo 299">
+    <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo 299">
 
-      {/* ── Sticky wrapper ── */}
-      <div className="sticky top-0 h-screen overflow-hidden">
-
-        {/* ── Scene container (no transform — perspective is per-image) ── */}
-        <div ref={sceneRef} className="absolute inset-0">
-
-        {/* ── Images ── */}
-        {renders.map((r, i) => (
-          <div
-            key={r.src}
-            ref={(el) => { imgRefs.current[i] = el; }}
+      {/* ── Background Ken Burns crossfade ── */}
+      <div className="absolute inset-0">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={bgIndex}
             className="absolute inset-0"
-            style={{
-              opacity: i === 0 ? 1 : 0,
-              willChange: "transform, opacity",
-              transformOrigin: "center center",
-            }}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ opacity: { duration: 2.4 }, scale: { duration: 8, ease: "linear" } }}
           >
             <Image
-              src={r.src}
-              alt={r.alt}
+              src={backgrounds[bgIndex]}
+              alt="Veríssimo 299"
               fill
-              className="object-cover"
               priority
+              className="object-cover"
               sizes="100vw"
             />
-          </div>
-        ))}
+          </motion.div>
+        </AnimatePresence>
 
-        {/* ── Dark overlay ── */}
-        <div className="absolute inset-0 bg-black/45" />
+        {/* Dark overlay — lighter to keep image visible */}
+        <div className="absolute inset-0 bg-black/30" />
 
-        {/* ── Vignette ── */}
+        {/* Vignette */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%)" }}
+          style={{ background: "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%)" }}
         />
 
-        {/* ── Bottom gradient → next section ── */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
 
-        {/* ── Grain texture ── */}
+        {/* Grain */}
         <div
-          className="absolute inset-0 opacity-[0.055] mix-blend-overlay pointer-events-none"
+          className="absolute inset-0 opacity-[0.05] mix-blend-overlay pointer-events-none"
           style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
           }}
         />
+      </div>
 
-        {/* ── Text block ── */}
-        <div
-          ref={textRef}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ willChange: "transform, opacity" }}
+      {/* ── Hero content centered ── */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+
+        {/* Eyebrow */}
+        <motion.div
+          className="flex items-center gap-4 mb-8"
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.4, ease }}
         >
-          {/* Eyebrow */}
-          <motion.div
-            className="inline-flex items-center gap-3 mb-8"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
+          <span className="block h-px w-10 bg-sand/60" />
+          <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
+            Lançamento '26 · Barra da Tijuca
+          </span>
+          <span className="block h-px w-10 bg-sand/60" />
+        </motion.div>
+
+        {/* Nome — display italic gigante (mask reveal) */}
+        <div className="overflow-hidden mb-8">
+          <motion.h1
+            className="font-cormorant italic font-light text-7xl md:text-9xl lg:text-[12rem] text-cream leading-[0.88] tracking-tight"
+            initial={{ y: "110%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.3, delay: 0.3, ease }}
           >
-            <motion.span
-              className="block h-px bg-sand"
-              initial={{ width: 0 }}
-              animate={{ width: 40 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sand uppercase">
-              Lançamento · 2026 · Barra da Tijuca
-            </span>
-            <motion.span
-              className="block h-px bg-sand"
-              initial={{ width: 0 }}
-              animate={{ width: 40 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </motion.div>
-
-          {/* Title */}
-          <div className="overflow-hidden mb-3">
-            <motion.h1
-              className="font-outfit font-extralight text-6xl md:text-8xl lg:text-[10rem] text-cream leading-[0.88] tracking-tight"
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Veríssimo
-            </motion.h1>
-          </div>
-
-          {/* Subtitle */}
-          <div className="overflow-hidden mb-10">
-            <motion.p
-              className="font-cormorant italic text-xl md:text-3xl lg:text-4xl text-cream/85 leading-snug max-w-2xl"
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.1, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Boutique residencial a poucos metros da praia da Barra
-            </motion.p>
-          </div>
-
-          {/* CTA */}
-          <motion.a
-            href="#interesse"
-            className="group inline-flex items-center gap-3 border border-sand/60 text-cream font-josefin text-[11px] tracking-w3 uppercase px-10 py-4 hover:bg-sand hover:text-bg hover:border-sand transition-all duration-500"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.1 }}
-          >
-            Conhecer o Veríssimo
-            <ArrowDown size={12} className="group-hover:translate-y-1 transition-transform duration-300" />
-          </motion.a>
+            Veríssimo
+          </motion.h1>
         </div>
 
-        {/* ── Scroll indicator ── */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.8 }}
+        {/* Role rotating line */}
+        <motion.p
+          className="font-outfit font-extralight text-xl md:text-2xl lg:text-3xl text-cream/90 mb-6 leading-snug max-w-3xl"
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.85, ease }}
         >
-          <span className="font-josefin text-[9px] tracking-w3 text-cream/40 uppercase mb-1">scroll</span>
+          Uma boutique{" "}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={roleIndex}
+              className="font-cormorant italic text-sand inline-block"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+            >
+              {roles[roleIndex]}
+            </motion.span>
+          </AnimatePresence>{" "}
+          a poucos metros do mar.
+        </motion.p>
+
+        {/* Descrição */}
+        <motion.p
+          className="font-josefin text-sm md:text-base text-cream/55 max-w-md leading-relaxed mb-10"
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 1.05, ease }}
+        >
+          Térreo + 3 pavimentos assinados pelo Studio R Arquitetura. Apartamentos
+          de 2 quartos e coberturas em fachada de ripado de madeira, vidro e
+          pedra natural.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 items-center"
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 1.25, ease }}
+        >
+          {/* Solid sand */}
+          <a
+            href="#interesse"
+            className="group inline-flex items-center gap-2.5 bg-sand text-bg font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:bg-cream transition-all duration-500 hover:scale-[1.03]"
+          >
+            <span>Conhecer o Veríssimo</span>
+            <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform duration-400" />
+          </a>
+
+          {/* Outlined */}
+          <a
+            href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo%20299"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 border border-cream/30 text-cream font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-cream hover:bg-white/5 transition-all duration-500 hover:scale-[1.03]"
+          >
+            <span>Receber tabela</span>
+            <span className="w-0 group-hover:w-3 h-px bg-cream transition-all duration-300" />
+          </a>
+        </motion.div>
+      </div>
+
+      {/* ── Background indicator dots ── */}
+      <motion.div
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
+      >
+        {backgrounds.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setBgIndex(i)}
+            aria-label={`Imagem ${i + 1}`}
+            className="block py-2 cursor-pointer"
+          >
+            <span
+              className={`block h-px transition-all duration-500 ${
+                bgIndex === i ? "w-10 bg-sand" : "w-5 bg-cream/25 hover:bg-cream/50"
+              }`}
+            />
+          </button>
+        ))}
+      </motion.div>
+
+      {/* ── Scroll indicator ── */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.8 }}
+      >
+        <span className="font-josefin text-[9px] tracking-w3 text-cream/40 uppercase">scroll</span>
+        <div className="relative w-px h-12 bg-cream/15 overflow-hidden">
           <motion.div
-            className="w-px h-10 bg-cream/30"
-            animate={{ scaleY: [0, 1, 0], transformOrigin: "top" }}
+            className="absolute top-0 left-0 w-full h-1/3 bg-sand"
+            animate={{ y: ["-100%", "300%"] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />
-        </motion.div>
-
-        {/* ── Slide counter (bottom right) ── */}
-        <motion.div
-          className="absolute bottom-10 right-8 hidden md:flex flex-col items-end gap-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.8 }}
-        >
-          <span className="font-josefin text-[10px] tracking-w3 text-cream/40 uppercase">
-            <span ref={counterRef}>01</span>
-            <span className="text-cream/20 mx-1">/</span>
-            <span ref={totalRef}>03</span>
-          </span>
-        </motion.div>
-
-        {/* ── Progress bar (bottom, full width) ── */}
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/5">
-          <div
-            ref={barRef}
-            className="h-full bg-gradient-to-r from-sand to-sea origin-left"
-            style={{ transform: "scaleX(0)", willChange: "transform" }}
-          />
         </div>
-        </div> {/* end inner scene */}
-      </div>   {/* end sticky wrapper */}
+      </motion.div>
     </section>
   );
 }
