@@ -14,12 +14,12 @@ const diferenciais = [
 export default function Empreendimento() {
   return (
     <section className="relative bg-bg py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="empreendimento">
-      {/* Gradient terroso de fundo (areia + madeira + cobre) */}
+      {/* Gradient bege sutil */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 15% 10%, rgba(184, 135, 78, 0.18) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 85% 90%, rgba(217, 205, 184, 0.12) 0%, transparent 55%), linear-gradient(180deg, rgba(36, 27, 20, 0.6) 0%, transparent 50%)",
+            "radial-gradient(ellipse 80% 60% at 15% 10%, rgba(232, 220, 196, 0.08) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 85% 90%, rgba(217, 205, 184, 0.06) 0%, transparent 55%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto">

@@ -16,12 +16,12 @@ export default function Localizacao() {
   return (
     <section className="relative bg-bg py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
 
-      {/* Gradient terroso de fundo */}
+      {/* Gradient bege sutil */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 15% 50%, rgba(184, 135, 78, 0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 85% 50%, rgba(217, 205, 184, 0.08) 0%, transparent 55%)",
+            "radial-gradient(ellipse 70% 50% at 15% 50%, rgba(232, 220, 196, 0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 85% 50%, rgba(217, 205, 184, 0.05) 0%, transparent 55%)",
         }}
       />
 
