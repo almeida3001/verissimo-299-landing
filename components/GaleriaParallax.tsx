@@ -14,31 +14,31 @@ type Slide = {
 const slides: Slide[] = [
   {
     src: "/images/fachada-frontal.png",
-    alt: "Fachada principal — Veríssimo",
+    alt: "Fachada principal Veríssimo",
     headline: "A poucos passos da praia",
     sub: "A Barra da Tijuca está a 5 minutos a pé. Calçadão, mar e quiosques no seu tempo livre.",
   },
   {
     src: "/images/vista-lateral.png",
-    alt: "Vista lateral — Veríssimo",
+    alt: "Vista lateral Veríssimo",
     headline: "No coração da Barra",
-    sub: "Av. Érico Veríssimo, 299 — endereço consolidado, valorização constante, cercado pela vida que importa.",
+    sub: "Av. Érico Veríssimo, 299. Endereço consolidado, valorização constante, cercado pela vida que importa.",
   },
   {
     src: "/images/jardim-aereo.png",
-    alt: "Jardim — Veríssimo",
+    alt: "Jardim Veríssimo",
     headline: "Qualidade de vida",
     sub: "Paisagismo tropical integrado, iluminação cênica e arquitetura que respira. Um refúgio dentro da cidade.",
   },
   {
     src: "/images/entrada-terreo.png",
-    alt: "Jardim e entrada — Veríssimo",
+    alt: "Jardim e entrada Veríssimo",
     headline: "Próximo ao mercado e ao metrô",
     sub: "Padaria, mercado e BRT a poucos metros. Toda a praticidade da Barra à porta de casa.",
   },
   {
     src: "/images/fachada-lateral.png",
-    alt: "Detalhe da fachada — Veríssimo",
+    alt: "Detalhe da fachada Veríssimo",
     headline: "Boutique residencial",
     sub: "Térreo + 3 pavimentos assinados pelo Studio R. Apartamentos de 2 quartos e coberturas exclusivas.",
   },

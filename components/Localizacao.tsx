@@ -53,7 +53,7 @@ export default function Localizacao() {
             transition={{ duration: 0.8 }}
           >
             <iframe
-              title="Mapa Veríssimo 299"
+              title="Mapa Veríssimo"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2!2d-43.3674!3d-23.0089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda3f8a3a3a3a3a%3A0x1234567890abcdef!2sAv.%20%C3%89rico%20Ver%C3%ADssimo%2C%20299%20-%20Barra%20da%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1716000000000!5m2!1spt-BR!2sbr"
               className="absolute inset-0 w-full h-full grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-700"
               loading="lazy"
@@ -77,7 +77,7 @@ export default function Localizacao() {
                   Av. Érico Veríssimo, 299
                 </p>
                 <p className="font-josefin text-sm text-muted">
-                  Barra da Tijuca — Rio de Janeiro, RJ
+                  Barra da Tijuca · Rio de Janeiro, RJ
                 </p>
               </div>
             </div>

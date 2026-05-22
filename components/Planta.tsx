@@ -33,9 +33,9 @@ export default function Planta() {
           </h2>
 
           <p className="font-josefin text-sm text-cream/55 leading-relaxed mb-10 max-w-md">
-            Quatro unidades por andar dispostas em layout espelhado — sala integrada à varanda,
-            cozinha aberta à sala de jantar e circulação central com hall de elevadores.
-            Todas as unidades com vista privilegiada e acesso à varanda.
+            Quatro unidades por andar dispostas em layout espelhado. Sala integrada
+            à varanda, cozinha aberta à sala de jantar e circulação central com hall
+            de elevadores. Todas as unidades com vista privilegiada e acesso à varanda.
           </p>
 
           <div className="space-y-4 border-t border-white/8 pt-8">
@@ -64,7 +64,7 @@ export default function Planta() {
           <div className="relative bg-white/[0.03] border border-white/8 p-4 md:p-6">
             <Image
               src="/images/planta-tipo.png"
-              alt="Planta Pavimento Tipo — Veríssimo 299"
+              alt="Planta Pavimento Tipo Veríssimo"
               width={900}
               height={600}
               className="w-full h-auto"
@@ -78,7 +78,7 @@ export default function Planta() {
 
           {/* Label decorativo */}
           <p className="mt-4 font-josefin text-[10px] tracking-w2 text-muted uppercase text-center">
-            Layout Pav. Tipo — Veríssimo 299
+            Layout Pav. Tipo · Veríssimo
           </p>
         </motion.div>
 

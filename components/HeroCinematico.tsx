@@ -75,17 +75,29 @@ export default function HeroCinematico() {
           <span className="block h-px w-10 bg-sand/60" />
         </motion.div>
 
-        {/* Nome — Outfit extralight (padrão Absoluto/A+) com mask reveal */}
-        <div className="overflow-hidden mb-8">
-          <motion.h1
-            className="font-outfit font-extralight text-6xl md:text-8xl lg:text-[10rem] text-cream leading-[0.92] tracking-tight text-balance"
-            initial={{ y: "115%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.4, delay: 0.2, ease }}
-            style={{ willChange: "transform" }}
-          >
-            Veríssimo
-          </motion.h1>
+        {/* Nome com subline residence */}
+        <div className="mb-8">
+          <div className="overflow-hidden">
+            <motion.h1
+              className="font-outfit font-extralight text-6xl md:text-8xl lg:text-[10rem] text-cream leading-[0.92] tracking-tight text-balance"
+              initial={{ y: "115%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.4, delay: 0.2, ease }}
+              style={{ willChange: "transform" }}
+            >
+              Veríssimo
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden mt-2 md:mt-3">
+            <motion.p
+              className="font-cormorant italic font-light text-2xl md:text-4xl lg:text-5xl text-sand/85 tracking-wide"
+              initial={{ y: "115%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.2, delay: 0.55, ease }}
+            >
+              residence
+            </motion.p>
+          </div>
         </div>
 
         {/* Role rotating line */}

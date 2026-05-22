@@ -3,12 +3,12 @@
 import { motion } from "motion/react";
 
 const diferenciais = [
-  { num: "01", label: "Localização", desc: "A poucos metros da praia da Barra da Tijuca — o endereço mais cobiçado do Rio." },
+  { num: "01", label: "Localização", desc: "A poucos metros da praia da Barra da Tijuca. O endereço mais cobiçado do Rio." },
   { num: "02", label: "Escala Boutique", desc: "Térreo + 3 pavimentos. Exclusividade, privacidade e convívio em baixa escala." },
-  { num: "03", label: "Arquitetura Assinada", desc: "Projeto do Studio R Arquitetura & Interiores — ripado de madeira, vidro, pedra natural e pergolado em bambu." },
+  { num: "03", label: "Arquitetura Assinada", desc: "Projeto do Studio R Arquitetura & Interiores: ripado de madeira, vidro, pedra natural e pergolado em bambu." },
   { num: "04", label: "Varandas Amplas", desc: "Todas as unidades com varandas generosas e paisagismo tropical integrado." },
-  { num: "05", label: "Iluminação Cênica", desc: "Iluminação linear LED nas circulações e no paisagismo — atmosfera singular a qualquer hora." },
-  { num: "06", label: "Tipologias Exclusivas", desc: "Apartamentos de 2 quartos e coberturas — soluções para quem recusa o ordinário." },
+  { num: "05", label: "Iluminação Cênica", desc: "Iluminação linear LED nas circulações e no paisagismo. Atmosfera singular a qualquer hora." },
+  { num: "06", label: "Tipologias Exclusivas", desc: "Apartamentos de 2 quartos e coberturas, soluções para quem recusa o ordinário." },
 ];
 
 export default function Empreendimento() {
@@ -56,7 +56,7 @@ export default function Empreendimento() {
               a privacidade e a integração com a paisagem.
             </p>
             <p className="font-josefin text-sm text-cream/55 leading-relaxed">
-              Av. Érico Veríssimo, 299 — Barra da Tijuca, Rio de Janeiro.
+              Av. Érico Veríssimo, 299. Barra da Tijuca, Rio de Janeiro.
               Arquitetura do Studio R com fachada em ripado de madeira, vidro e pedra
               natural, além de pergolado superior em bambu e paisagismo tropical integrado.
               Previsão de entrega: 2026.

@@ -11,7 +11,7 @@ export default function LeadForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const msg = encodeURIComponent(
-      `Olá, tenho interesse no Veríssimo 299.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}\nInteresse: ${form.interesse === "cobertura" ? "Cobertura" : "Apartamento 2 quartos"}`
+      `Olá, tenho interesse no Veríssimo.\n\nNome: ${form.nome}\nTelefone: ${form.telefone}\nInteresse: ${form.interesse === "cobertura" ? "Cobertura" : "Apartamento 2 quartos"}`
     );
     window.open(`https://wa.me/5521991024201?text=${msg}`, "_blank");
     setEnviado(true);
