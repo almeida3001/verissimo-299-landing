@@ -1,61 +1,50 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-
-const backgrounds = [
-  "/images/fachada-frontal.png",
-  "/images/vista-lateral.png",
-  "/images/entrada-terreo.png",
-  "/images/jardim-aereo.png",
-];
 
 const roles = ["privilegiada", "exclusiva", "contemporânea", "à beira-mar"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function HeroCinematico() {
-  const [bgIndex, setBgIndex] = useState(0);
   const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setBgIndex((i) => (i + 1) % backgrounds.length), 7000);
-    return () => clearInterval(id);
-  }, []);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const id = setInterval(() => setRoleIndex((i) => (i + 1) % roles.length), 2200);
     return () => clearInterval(id);
   }, []);
 
+  /* iOS Safari fix — força play após mount */
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
+
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo 299">
+    <section className="relative w-full h-screen overflow-hidden bg-bg" aria-label="Hero Veríssimo">
 
-      {/* ── Background — Ken Burns crossfade ── */}
+      {/* ── Background — Vídeo fullscreen ── */}
       <div className="absolute inset-0">
-        <AnimatePresence mode="sync">
-          <motion.div
-            key={bgIndex}
-            className="absolute inset-0"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
-            transition={{ opacity: { duration: 2.4 }, scale: { duration: 8, ease: "linear" } }}
-          >
-            <Image
-              src={backgrounds[bgIndex]}
-              alt="Veríssimo 299"
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-            />
-          </motion.div>
-        </AnimatePresence>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/videos/hero-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover animate-hero-zoom"
+        >
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
 
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/25" />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%)" }}
@@ -138,7 +127,7 @@ export default function HeroCinematico() {
           </a>
 
           <a
-            href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo%20299"
+            href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 border border-cream/30 text-cream font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-cream hover:bg-white/5 transition-all duration-500 hover:scale-[1.03]"
@@ -148,29 +137,6 @@ export default function HeroCinematico() {
           </a>
         </motion.div>
       </div>
-
-      {/* ── Background indicator dots ── */}
-      <motion.div
-        className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-      >
-        {backgrounds.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setBgIndex(i)}
-            aria-label={`Imagem ${i + 1}`}
-            className="block py-2 cursor-pointer"
-          >
-            <span
-              className={`block h-px transition-all duration-500 ${
-                bgIndex === i ? "w-10 bg-sand" : "w-5 bg-cream/25 hover:bg-cream/50"
-              }`}
-            />
-          </button>
-        ))}
-      </motion.div>
 
       {/* ── Scroll indicator ── */}
       <motion.div
