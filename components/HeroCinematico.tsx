@@ -122,24 +122,12 @@ export default function HeroCinematico() {
           a poucos metros do mar.
         </motion.p>
 
-        {/* Descrição */}
-        <motion.p
-          className="font-josefin text-sm md:text-base text-cream/55 max-w-md leading-relaxed mb-10"
+        {/* CTAs */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 items-center mt-4"
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 1.1, ease }}
-        >
-          Térreo + 3 pavimentos assinados pelo Studio R Arquitetura.
-          Apartamentos de 2 quartos e coberturas em fachada de ripado de madeira,
-          vidro e pedra natural.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 items-center"
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 1.3, ease }}
         >
           <a
             href="#interesse"
