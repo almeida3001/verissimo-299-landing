@@ -88,7 +88,7 @@ export default function HeroCinematico() {
               Veríssimo
             </motion.h1>
           </div>
-          <div className="overflow-hidden -mt-4 md:-mt-10 lg:-mt-14">
+          <div className="overflow-hidden mt-1 md:mt-2">
             <motion.p
               className="font-cormorant italic font-light text-sm md:text-lg lg:text-xl text-cream"
               style={{ letterSpacing: "0.45em" }}
