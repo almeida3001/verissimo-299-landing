@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://verissimo-299-landing.vercel.app"),
   title: "Veríssimo Residence | Apenas 6 apartamentos na Barra da Tijuca",
   description:
-    "Apenas 6 apartamentos assinados pelo Studio R Arquitetura na Av. Érico Veríssimo, 299. A poucos passos da Praia do Pepê. Pré-lançamento 2026.",
+    "Apenas 6 apartamentos assinados pelo Studio R Arquitetura na Av. Érico Veríssimo, 299. A poucos passos da Praia do Pepê. Pré-lançamento 2027.",
   keywords: [
     "Veríssimo Residence",
     "apartamento Barra da Tijuca",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Veríssimo Residence",
     title: "Veríssimo Residence | Apenas 6 apartamentos na Barra da Tijuca",
     description:
-      "Boutique residencial assinado pelo Studio R Arquitetura. Apenas 6 unidades, a poucos passos da Praia do Pepê. Pré-lançamento 2026.",
+      "Boutique residencial assinado pelo Studio R Arquitetura. Apenas 6 unidades, a poucos passos da Praia do Pepê. Pré-lançamento 2027.",
     images: [
       {
         url: "/images/fachada-frontal.png",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Veríssimo Residence | 6 apartamentos na Barra da Tijuca",
     description:
-      "Boutique residencial assinado pelo Studio R. Pré-lançamento 2026.",
+      "Boutique residencial assinado pelo Studio R. Pré-lançamento 2027.",
     images: ["/images/fachada-frontal.png"],
   },
   robots: {
@@ -105,7 +105,7 @@ const jsonLd = {
     floorLevel: "T+3",
   },
   numberOfRooms: 2,
-  yearBuilt: "2026",
+  yearBuilt: "2027",
   provider: {
     "@type": "Organization",
     name: "Absoluto Engenharia",

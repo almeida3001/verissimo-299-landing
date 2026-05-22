@@ -79,7 +79,7 @@ export default function Planta() {
             />
             <div className="absolute top-4 right-4">
               <span className="font-josefin text-[9px] tracking-w3 text-muted uppercase bg-surface px-3 py-1.5">
-                Studio R · 2026
+                Studio R · 2027
               </span>
             </div>
           </div>

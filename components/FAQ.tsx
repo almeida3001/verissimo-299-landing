@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Quando é a entrega?",
-    a: "Previsão de entrega em 2026. As condições de pré-lançamento aplicam-se às reservas feitas durante a folha de interesse, antes do lançamento oficial.",
+    a: "Previsão de entrega em 2027. As condições de pré-lançamento aplicam-se às reservas feitas durante a folha de interesse, antes do lançamento oficial.",
   },
   {
     q: "Quem é o Studio R?",

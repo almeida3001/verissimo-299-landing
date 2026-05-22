@@ -317,7 +317,7 @@ export default function Empreendimento() {
                   { value: "2 quartos",        label: "Tipologia padrão"          },
                   { value: "Coberturas",       label: "Privativas com terraço"    },
                   { value: "Térreo + 3",       label: "Pavimentos"                },
-                  { value: "Entrega 2026",     label: "Pré-lançamento"            },
+                  { value: "Entrega 2027",     label: "Pré-lançamento"            },
                   { value: "Studio R",         label: "Arquitetura & Interiores"  },
                   { value: "Absoluto",         label: "Construção e Incorporação" },
                 ].map((s) => (
