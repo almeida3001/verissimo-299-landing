@@ -49,15 +49,21 @@ export default function LeadForm() {
             <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">Registre seu interesse</span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
-            Conhecer
+          <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[1] tracking-tight mb-4 text-balance">
+            Quer receber tudo
             <br />
-            <span className="font-cormorant italic text-cream">em primeira mão.</span>
+            <span className="font-cormorant italic text-cream">antes da abertura?</span>
           </h2>
 
+          <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-6 max-w-md">
+            Conhecer em primeira mão.
+          </p>
+
           <p className="font-josefin text-sm text-cream/55 leading-relaxed max-w-md mb-10">
-            Tabela, condições de pré-lançamento e atendimento por corretores do
-            empreendimento. Resposta em até duas horas, em horário comercial.
+            Preencha o formulário e receba informações exclusivas sobre o
+            Veríssimo Residence: tabela de valores, condições de pré-lançamento
+            e atendimento por corretores. Resposta em até duas horas, em
+            horário comercial.
           </p>
 
           {/* Dados de contato direto */}

@@ -22,10 +22,10 @@ export default function Empreendimento() {
     <section className="relative bg-bg overflow-hidden" id="empreendimento">
 
       {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
-      <div className="relative grid md:grid-cols-2 items-stretch min-h-[70vh] md:min-h-[80vh]">
+      <div className="relative grid md:grid-cols-2 items-center gap-0">
 
-        {/* Vídeo (50% esquerda) */}
-        <div className="relative overflow-hidden bg-bg min-h-[50vh] md:min-h-0">
+        {/* Vídeo (50% esquerda) — aspect 16:9 mantém proporção original do filme */}
+        <div className="relative overflow-hidden bg-bg w-full aspect-video">
           <video
             ref={videoRef}
             muted
