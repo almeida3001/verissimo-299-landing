@@ -99,11 +99,6 @@ export default function Empreendimento() {
             de tirar o fôlego
           </h2>
 
-          {/* Sub */}
-          <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-10 max-w-md">
-            Na Avenida Érico Veríssimo, no coração da Barra.
-          </p>
-
           {/* Descrição — apenas 1 parágrafo */}
           <div className="font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-xl border-t border-elevated/50 pt-8">
             <p>
