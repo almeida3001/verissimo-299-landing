@@ -68,11 +68,11 @@ export default function HeroCinematico() {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.45, ease }}
         >
-          <span className="block h-px w-10 bg-sea/60" />
-          <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
+          <span className="block h-px w-10 bg-cream/60" />
+          <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream uppercase">
             Lançamento '26 · Barra da Tijuca
           </span>
-          <span className="block h-px w-10 bg-sea/60" />
+          <span className="block h-px w-10 bg-cream/60" />
         </motion.div>
 
         {/* Nome com subline residence */}
@@ -83,10 +83,7 @@ export default function HeroCinematico() {
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.4, delay: 0.2, ease }}
-              style={{
-                willChange: "transform",
-                textShadow: "0 2px 24px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.35)",
-              }}
+              style={{ willChange: "transform" }}
             >
               Veríssimo
             </motion.h1>
@@ -94,10 +91,7 @@ export default function HeroCinematico() {
           <div className="overflow-hidden -mt-4 md:-mt-10 lg:-mt-14">
             <motion.p
               className="font-cormorant italic font-light text-sm md:text-lg lg:text-xl text-cream"
-              style={{
-                letterSpacing: "0.45em",
-                textShadow: "0 1px 14px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.4)",
-              }}
+              style={{ letterSpacing: "0.45em" }}
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.2, delay: 0.55, ease }}
@@ -118,7 +112,7 @@ export default function HeroCinematico() {
           <AnimatePresence mode="wait">
             <motion.span
               key={roleIndex}
-              className="font-cormorant italic text-sea inline-block"
+              className="font-cormorant italic text-cream inline-block"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -149,10 +143,10 @@ export default function HeroCinematico() {
             href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 border border-sea/40 text-sea font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-sea hover:bg-sea/10 transition-all duration-500 hover:scale-[1.03]"
+            className="group inline-flex items-center gap-2.5 border border-cream/50 text-cream font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-cream hover:bg-white/10 transition-all duration-500 hover:scale-[1.03]"
           >
             <span>Receber tabela</span>
-            <span className="w-0 group-hover:w-3 h-px bg-sea transition-all duration-300" />
+            <span className="w-0 group-hover:w-3 h-px bg-cream transition-all duration-300" />
           </a>
         </motion.div>
       </div>
