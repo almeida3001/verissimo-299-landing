@@ -4,20 +4,10 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 
-const pontos = [
-  { label: "Praia do Pepê",         dist: "4 min a pé"  },
-  { label: "Av. Olegário Maciel",   dist: "3 min a pé"  },
-  { label: "Supermercado Zona Sul", dist: "ao lado"     },
-  { label: "Bodytech · Smart Fit",  dist: "5 min a pé"  },
-  { label: "Bosque da Barra",       dist: "7 min a pé"  },
-  { label: "BRT · Metrô Linha 4",   dist: "12 min a pé" },
-];
-
 export default function Localizacao() {
   return (
     <section className="relative bg-bg py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="localizacao">
 
-      {/* Gradient bege sutil */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -28,7 +18,7 @@ export default function Localizacao() {
 
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-        {/* ── Imagem aérea (esquerda) ── */}
+        {/* Imagem aérea */}
         <motion.div
           className="relative overflow-hidden"
           style={{ aspectRatio: "4/5" }}
@@ -53,19 +43,14 @@ export default function Localizacao() {
             />
           </motion.div>
 
-          {/* Vignette sutil pra contraste */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }}
           />
 
-          {/* Pill com endereço sobre a imagem */}
           <motion.div
             className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6 md:right-6 flex items-center gap-2 px-4 py-2.5 rounded-full"
-            style={{
-              background: "rgba(36, 30, 22, 0.65)",
-              backdropFilter: "blur(16px) saturate(160%)",
-            }}
+            style={{ background: "rgba(36, 30, 22, 0.65)", backdropFilter: "blur(16px) saturate(160%)" }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,14 +63,13 @@ export default function Localizacao() {
           </motion.div>
         </motion.div>
 
-        {/* ── Conteúdo (direita) ── */}
+        {/* Conteúdo (direita) — simplificado, sem duplicação de lista */}
         <motion.div
           initial={{ opacity: 0, x: 32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Eyebrow */}
           <div className="inline-flex items-center gap-3 mb-8">
             <span className="block h-px w-10 bg-sea" />
             <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
@@ -93,52 +77,29 @@ export default function Localizacao() {
             </span>
           </div>
 
-          {/* Headline */}
           <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
             A Barra que poucos
             <br />
             <span className="font-cormorant italic text-cream">conhecem por dentro.</span>
           </h2>
 
-          {/* Sub */}
           <p className="font-cormorant italic text-lg md:text-xl text-cream/75 leading-snug mb-10 max-w-md">
             Cinco minutos a pé do mar. O resto, à sua porta.
           </p>
 
-          {/* Lista de pontos */}
-          <div className="space-y-px bg-white/5 mb-10">
-            {pontos.map((p, i) => (
-              <motion.div
-                key={p.label}
-                className="flex items-center justify-between gap-6 bg-bg px-5 py-4 group hover:bg-surface transition-colors duration-300"
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="font-josefin text-[10px] tracking-w2 text-sea uppercase w-8">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-sea transition-colors duration-300">
-                    {p.label}
-                  </span>
-                </div>
-                <span className="font-cormorant italic text-sm md:text-base text-cream/55 whitespace-nowrap">
-                  {p.dist}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+          <p className="font-josefin text-sm text-cream/55 leading-relaxed max-w-md mb-10">
+            Entre o calçadão da Praia do Pepê e a esquina da Av. Olegário Maciel,
+            o eixo mais residencial da Barra — onde estão o mercado, a padaria,
+            as academias e a vida cotidiana de quem conhece o bairro de verdade.
+          </p>
 
-          {/* CTA Maps */}
           <a
             href="https://maps.google.com/?q=Av.+Érico+Veríssimo,+299,+Barra+da+Tijuca,+Rio+de+Janeiro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-josefin text-[11px] tracking-w2 text-sea uppercase border-b border-sea/40 pb-1 hover:text-sea hover:border-sea transition-colors duration-300"
           >
-            Abrir no Google Maps
+            Ver no Google Maps →
           </a>
         </motion.div>
       </div>

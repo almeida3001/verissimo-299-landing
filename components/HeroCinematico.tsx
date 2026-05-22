@@ -17,12 +17,22 @@ export default function HeroCinematico() {
     return () => clearInterval(id);
   }, []);
 
-  /* iOS Safari fix — força play após mount */
+  /* iOS Safari fix + pausa quando fora do viewport (economiza dados/bateria) */
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = true;
     v.play().catch(() => {});
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
   }, []);
 
   return (
@@ -70,7 +80,7 @@ export default function HeroCinematico() {
         >
           <span className="block h-px w-10 bg-cream/60" />
           <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream uppercase">
-            No coração da Barra da Tijuca
+            Apenas 6 unidades · pré-lançamento 2026
           </span>
           <span className="block h-px w-10 bg-cream/60" />
         </motion.div>

@@ -128,8 +128,18 @@ export default function LeadForm() {
                   type="tel"
                   required
                   value={form.telefone}
-                  onChange={(e) => setForm({ ...form, telefone: e.target.value })}
+                  onChange={(e) => {
+                    // máscara (XX) XXXXX-XXXX
+                    const v = e.target.value.replace(/\D/g, "").slice(0, 11);
+                    let masked = v;
+                    if (v.length > 0) masked = "(" + v.slice(0, 2);
+                    if (v.length >= 3) masked += ") " + v.slice(2, 7);
+                    if (v.length >= 8) masked += "-" + v.slice(7, 11);
+                    setForm({ ...form, telefone: masked });
+                  }}
                   placeholder="(21) 99999-9999"
+                  inputMode="numeric"
+                  maxLength={15}
                   className="w-full bg-transparent border-b border-white/15 focus:border-sea outline-none py-3 font-josefin text-sm text-cream placeholder:text-cream/20 transition-colors duration-300"
                 />
               </div>

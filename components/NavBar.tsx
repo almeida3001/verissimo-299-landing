@@ -13,6 +13,7 @@ const links = [
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     function onScroll() {
@@ -20,6 +21,27 @@ export default function NavBar() {
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* Scroll-spy — destaca link da seção visível */
+  useEffect(() => {
+    const sectionIds = ["empreendimento", "localizacao", "galeria", "planta"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive("#" + visible.target.id);
+      },
+      { threshold: [0.25, 0.5, 0.75], rootMargin: "-80px 0px -40% 0px" }
+    );
+
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
   }, []);
 
   return (
@@ -68,7 +90,11 @@ export default function NavBar() {
           <a
             key={l.href}
             href={l.href}
-            className="relative font-josefin text-[10px] sm:text-[11px] tracking-w2 uppercase rounded-full px-3 sm:px-3.5 py-2 text-cream/55 hover:text-cream hover:bg-cream/5 transition-all duration-300"
+            className={`relative font-josefin text-[10px] sm:text-[11px] tracking-w2 uppercase rounded-full px-3 sm:px-3.5 py-2 transition-all duration-300 ${
+              active === l.href
+                ? "text-cream bg-cream/5"
+                : "text-cream/55 hover:text-cream hover:bg-cream/5"
+            }`}
           >
             {l.label}
           </a>

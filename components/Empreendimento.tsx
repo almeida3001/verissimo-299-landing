@@ -6,12 +6,10 @@ import { motion } from "motion/react";
 import { Play } from "lucide-react";
 
 const diferenciais = [
-  { num: "01", label: "Localização Privilegiada", desc: "A poucos passos da Praia do Pepê, no coração da Barra da Tijuca. Endereço consolidado, valorização constante." },
-  { num: "02", label: "Apenas 6 unidades",        desc: "Térreo livre e três andares acima. Duas unidades por andar. Seis vizinhos no total — privacidade real entre poucos." },
-  { num: "03", label: "Arquitetura Assinada",     desc: "Projeto do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
-  { num: "04", label: "Fachada Atemporal",        desc: "Ripado de madeira natural, vidro temperado e pedra portuguesa. Pergolado superior em bambu integrado ao paisagismo." },
-  { num: "05", label: "Iluminação Cênica",        desc: "Iluminação linear LED nas circulações, varandas e paisagismo. Atmosfera singular do amanhecer ao anoitecer." },
-  { num: "06", label: "Tipologias Exclusivas",    desc: "Apartamentos de 2 quartos e coberturas privativas. Varandas amplas, plantas funcionais e acabamento de alto padrão." },
+  { num: "01", label: "Endereço",  desc: "Entre o calçadão da Praia do Pepê e a esquina da Av. Olegário Maciel. O eixo mais residencial da Barra." },
+  { num: "02", label: "Autoria",   desc: "Projeto integral do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
+  { num: "03", label: "Matéria",   desc: "Ripado de madeira natural, pedra portuguesa, vidro temperado e pergolado em bambu. Materiais que envelhecem bem." },
+  { num: "04", label: "Vida lenta", desc: "Mercado ao lado, BRT a doze minutos, mar a quatro. A Barra que se vive de chinelo, não de carro." },
 ];
 
 export default function Empreendimento() {
@@ -347,7 +345,7 @@ export default function Empreendimento() {
               </span>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-elevated/30">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-elevated/30">
               {diferenciais.map((d, i) => (
                 <motion.div
                   key={d.num}

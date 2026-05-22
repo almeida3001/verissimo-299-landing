@@ -4,6 +4,8 @@ import Empreendimento from "@/components/Empreendimento";
 import GaleriaParallax from "@/components/GaleriaParallax";
 import Planta from "@/components/Planta";
 import Localizacao from "@/components/Localizacao";
+import SobreAbsoluto from "@/components/SobreAbsoluto";
+import FAQ from "@/components/FAQ";
 import LeadForm from "@/components/LeadForm";
 import FooterMarquee from "@/components/FooterMarquee";
 
@@ -17,6 +19,8 @@ export default function HomePage() {
         <Localizacao />
         <GaleriaParallax />
         <Planta />
+        <SobreAbsoluto />
+        <FAQ />
         <LeadForm />
       </main>
       <FooterMarquee />
