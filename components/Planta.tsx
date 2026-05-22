@@ -41,7 +41,7 @@ export default function Planta() {
           </h2>
 
           <p className="font-josefin text-sm text-cream/55 leading-relaxed mb-10 max-w-md">
-            Quatro unidades por andar dispostas em layout espelhado. Sala integrada
+            Duas unidades por andar dispostas em layout espelhado. Sala integrada
             à varanda, cozinha aberta à sala de jantar e circulação central com hall
             de elevadores. Todas as unidades com vista privilegiada e acesso à varanda.
           </p>
@@ -49,8 +49,8 @@ export default function Planta() {
           <div className="space-y-4 border-t border-white/8 pt-8">
             {[
               { label: "Tipologia",   value: "2 quartos / Cobertura" },
-              { label: "Pavimentos",  value: "Térreo + 3 andares" },
-              { label: "Unidades",    value: "4 por andar" },
+              { label: "Pavimentos",  value: "Térreo livre + 3 andares" },
+              { label: "Unidades",    value: "6 no total · 2 por andar" },
               { label: "Arquitetura", value: "Studio R Arquitetura & Interiores" },
             ].map((item) => (
               <div key={item.label} className="flex items-baseline justify-between gap-4">

@@ -7,7 +7,7 @@ import { Play } from "lucide-react";
 
 const diferenciais = [
   { num: "01", label: "Localização Privilegiada", desc: "A poucos passos da Praia do Pepê, no coração da Barra da Tijuca. Endereço consolidado, valorização constante." },
-  { num: "02", label: "Apenas 16 unidades",       desc: "Térreo e três andares. Quatro apartamentos por andar. Dezesseis vizinhos no total. O oposto da torre." },
+  { num: "02", label: "Apenas 6 unidades",        desc: "Térreo livre e três andares acima. Duas unidades por andar. Seis vizinhos no total. O oposto da torre." },
   { num: "03", label: "Arquitetura Assinada",     desc: "Projeto do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
   { num: "04", label: "Fachada Atemporal",        desc: "Ripado de madeira natural, vidro temperado e pedra portuguesa. Pergolado superior em bambu integrado ao paisagismo." },
   { num: "05", label: "Iluminação Cênica",        desc: "Iluminação linear LED nas circulações, varandas e paisagismo. Atmosfera singular do amanhecer ao anoitecer." },
@@ -134,10 +134,10 @@ export default function Empreendimento() {
               entre o calçadão da Praia do Pepê e a esquina da Olegário Maciel.
             </p>
             <p>
-              Apenas <span className="text-cream">térreo + 3 pavimentos</span> com
-              quatro unidades por andar — apartamentos de 2 quartos e coberturas
-              privativas. Varandas amplas, plantas funcionais e paisagismo tropical
-              integrado em cada detalhe.
+              Apenas <span className="text-cream">três andares</span> sobre térreo
+              livre, com <span className="text-cream">duas unidades por andar</span> —
+              apartamentos de 2 quartos e coberturas privativas. Varandas amplas,
+              plantas funcionais e paisagismo tropical integrado em cada detalhe.
             </p>
             <p>
               Fachada com <span className="text-cream">ripado de madeira natural</span>,
@@ -195,7 +195,7 @@ export default function Empreendimento() {
 
               {/* Sub italic */}
               <p className="font-cormorant italic text-xl md:text-2xl text-cream/90 leading-snug mb-6">
-                Quatro andares. Dezesseis apartamentos. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
+                Três andares. Seis apartamentos. Um edifício que devolve à Barra o que sempre lhe coube: o tempo de quem mora bem.
               </p>
 
               {/* Parágrafos descritivos */}
@@ -207,10 +207,11 @@ export default function Empreendimento() {
                   responsável por alguns dos endereços mais desejados do litoral carioca.
                 </p>
                 <p>
-                  São apenas <span className="text-cream">quatro unidades por andar</span>{" "}
-                  distribuídas em <span className="text-cream">térreo + 3 pavimentos</span>.
-                  Apartamentos de 2 quartos e coberturas privativas com varandas amplas,
-                  paisagismo tropical integrado e iluminação cênica em toda a circulação.
+                  São apenas <span className="text-cream">seis unidades no total</span>{" "}
+                  — duas por andar, em <span className="text-cream">três pavimentos sobre
+                  térreo livre</span>. Apartamentos de 2 quartos e coberturas privativas
+                  com varandas amplas, paisagismo tropical integrado e iluminação cênica
+                  em toda a circulação.
                 </p>
                 <p>
                   A fachada combina <span className="text-cream">ripado de madeira natural</span>,
@@ -265,7 +266,7 @@ export default function Empreendimento() {
           >
             {[
               { value: "T + 3",  label: "Pavimentos"        },
-              { value: "4",      label: "Unidades / andar"  },
+              { value: "6",      label: "Unidades no total" },
               { value: "2Q",     label: "Tipologia padrão"  },
               { value: "Cob.",   label: "Coberturas"        },
               { value: "2026",   label: "Entrega"           },
