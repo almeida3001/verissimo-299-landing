@@ -5,13 +5,6 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Play } from "lucide-react";
 
-const diferenciais = [
-  { num: "01", label: "Endereço",  desc: "Entre o calçadão da Praia do Pepê e a esquina da Av. Olegário Maciel. O eixo mais residencial da Barra." },
-  { num: "02", label: "Autoria",   desc: "Projeto integral do Studio R Arquitetura & Interiores. Linguagem contemporânea com referências do litoral carioca." },
-  { num: "03", label: "Matéria",   desc: "Ripado de madeira natural, pedra portuguesa, vidro temperado e pergolado em bambu. Materiais que envelhecem bem." },
-  { num: "04", label: "Vida lenta", desc: "Mercado ao lado, BRT a doze minutos, mar a quatro. A Barra que se vive de chinelo, não de carro." },
-];
-
 export default function Empreendimento() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -330,44 +323,6 @@ export default function Empreendimento() {
             </div>
           </motion.div>
 
-          {/* Diferenciais grid */}
-          <div className="mb-4">
-            <motion.div
-              className="inline-flex items-center gap-3 mb-10"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <span className="block h-px w-8 bg-sea" />
-              <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
-                Diferenciais
-              </span>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-elevated/30">
-              {diferenciais.map((d, i) => (
-                <motion.div
-                  key={d.num}
-                  className="bg-bg p-8 md:p-10 group hover:bg-surface transition-colors duration-500"
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.08 }}
-                >
-                  <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase mb-5 block">
-                    {d.num}
-                  </span>
-                  <h4 className="font-outfit font-light text-xl text-cream mb-3 group-hover:text-sea transition-colors duration-300">
-                    {d.label}
-                  </h4>
-                  <p className="font-josefin text-sm text-cream/55 leading-relaxed">
-                    {d.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

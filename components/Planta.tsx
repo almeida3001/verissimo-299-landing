@@ -5,15 +5,8 @@ import { motion } from "motion/react";
 
 export default function Planta() {
   return (
-    <section className="relative bg-bg py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="planta">
-      {/* Gradient bege sutil */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 50% at 90% 20%, rgba(232, 220, 196, 0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 10% 80%, rgba(217, 205, 184, 0.05) 0%, transparent 55%)",
-        }}
-      />
+    <section className="relative bg-warmlight text-textdark py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="planta">
+
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* Texto */}
@@ -25,28 +18,28 @@ export default function Planta() {
         >
           <div className="inline-flex items-center gap-3 mb-8">
             <motion.span
-              className="block h-px bg-bronze"
+              className="block h-px bg-sea"
               initial={{ width: 0 }}
               whileInView={{ width: 40 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.2 }}
             />
-            <span className="font-josefin text-[10px] tracking-w3 text-bronze uppercase">Plantas</span>
+            <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">Plantas</span>
           </div>
 
-          <h2 className="font-outfit font-extralight text-5xl md:text-6xl text-cream leading-[0.92] tracking-tight mb-6">
+          <h2 className="font-outfit font-extralight text-5xl md:text-6xl text-textdark leading-[0.92] tracking-tight mb-6">
             Pavimento
             <br />
             <span className="font-cormorant italic text-sea">Tipo</span>
           </h2>
 
-          <p className="font-josefin text-sm text-cream/55 leading-relaxed mb-10 max-w-md">
+          <p className="font-josefin text-sm text-muteddark leading-relaxed mb-10 max-w-md">
             Duas unidades por andar dispostas em layout espelhado. Sala integrada
             à varanda, cozinha aberta à sala de jantar e circulação central com hall
             de elevadores. Todas as unidades com vista privilegiada e acesso à varanda.
           </p>
 
-          <div className="space-y-4 border-t border-white/8 pt-8">
+          <div className="space-y-4 border-t border-linedark pt-8">
             {[
               { label: "Tipologia",   value: "2 quartos / Cobertura" },
               { label: "Pavimentos",  value: "Térreo livre + 3 andares" },
@@ -54,8 +47,8 @@ export default function Planta() {
               { label: "Arquitetura", value: "Studio R Arquitetura & Interiores" },
             ].map((item) => (
               <div key={item.label} className="flex items-baseline justify-between gap-4">
-                <span className="font-josefin text-[10px] tracking-w2 text-muted uppercase">{item.label}</span>
-                <span className="font-cormorant text-lg text-cream/80">{item.value}</span>
+                <span className="font-josefin text-[10px] tracking-w2 text-muteddark/70 uppercase">{item.label}</span>
+                <span className="font-cormorant text-lg text-textdark/80">{item.value}</span>
               </div>
             ))}
           </div>
@@ -69,7 +62,7 @@ export default function Planta() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative bg-white/[0.03] border border-white/8 p-4 md:p-6">
+          <div className="relative bg-white/40 border border-textdark/10 p-4 md:p-6">
             <Image
               src="/images/planta-tipo.png"
               alt="Planta Pavimento Tipo Veríssimo"
@@ -78,14 +71,13 @@ export default function Planta() {
               className="w-full h-auto"
             />
             <div className="absolute top-4 right-4">
-              <span className="font-josefin text-[9px] tracking-w3 text-muted uppercase bg-surface px-3 py-1.5">
+              <span className="font-josefin text-[9px] tracking-w3 text-muteddark uppercase bg-warmlight px-3 py-1.5 border border-textdark/10">
                 Studio R · 2027
               </span>
             </div>
           </div>
 
-          {/* Label decorativo */}
-          <p className="mt-4 font-josefin text-[10px] tracking-w2 text-muted uppercase text-center">
+          <p className="mt-4 font-josefin text-[10px] tracking-w2 text-muteddark/70 uppercase text-center">
             Layout Pav. Tipo · Veríssimo
           </p>
         </motion.div>

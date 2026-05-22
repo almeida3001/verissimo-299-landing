@@ -35,7 +35,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="relative bg-bg py-20 md:py-28 px-6 md:px-16 overflow-hidden border-t border-elevated/30">
+    <section className="relative bg-warmlight text-textdark py-20 md:py-28 px-6 md:px-16 overflow-hidden">
 
       <div className="relative max-w-3xl mx-auto">
 
@@ -53,21 +53,21 @@ export default function FAQ() {
               Perguntas frequentes
             </span>
           </div>
-          <h2 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] tracking-tight text-balance">
+          <h2 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-textdark leading-[1.05] tracking-tight text-balance">
             Tudo o que você precisa
             <br />
-            <span className="font-cormorant italic text-cream">saber antes.</span>
+            <span className="font-cormorant italic text-textdark">saber antes.</span>
           </h2>
         </motion.div>
 
         {/* Lista FAQ */}
-        <div className="space-y-px bg-elevated/30">
+        <div className="space-y-px bg-linedark">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
               <motion.div
                 key={f.q}
-                className="bg-bg"
+                className="bg-warmlight"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -75,10 +75,10 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-6 px-5 py-5 md:px-6 md:py-6 text-left group hover:bg-surface/40 transition-colors duration-300 cursor-pointer"
+                  className="w-full flex items-center justify-between gap-6 px-5 py-5 md:px-6 md:py-6 text-left group hover:bg-white/30 transition-colors duration-300 cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-sea transition-colors duration-300">
+                  <span className="font-outfit font-light text-base md:text-lg text-textdark group-hover:text-sea transition-colors duration-300">
                     {f.q}
                   </span>
                   <motion.span
@@ -100,7 +100,7 @@ export default function FAQ() {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 pb-5 md:px-6 md:pb-6 font-josefin text-sm md:text-base text-cream/65 leading-relaxed max-w-2xl">
+                      <p className="px-5 pb-5 md:px-6 md:pb-6 font-josefin text-sm md:text-base text-muteddark leading-relaxed max-w-2xl">
                         {f.a}
                       </p>
                     </motion.div>
