@@ -5,13 +5,12 @@ import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 
 const pontos = [
-  { label: "Praia do Pepê",         dist: "em frente"        },
-  { label: "Av. Olegário Maciel",   dist: "esquina"          },
-  { label: "Supermercado Zona Sul", dist: "ao lado"          },
-  { label: "Bodytech · Smart Fit",  dist: "5 min a pé"       },
-  { label: "Bosque da Barra",       dist: "7 min a pé"       },
-  { label: "BRT · Metrô Linha 4",   dist: "7 min a pé"       },
-  { label: "Hospital Samaritano",   dist: "5 min de carro"   },
+  { label: "Praia do Pepê",         dist: "4 min a pé"  },
+  { label: "Av. Olegário Maciel",   dist: "3 min a pé"  },
+  { label: "Supermercado Zona Sul", dist: "ao lado"     },
+  { label: "Bodytech · Smart Fit",  dist: "5 min a pé"  },
+  { label: "Bosque da Barra",       dist: "7 min a pé"  },
+  { label: "BRT · Metrô Linha 4",   dist: "12 min a pé" },
 ];
 
 export default function Localizacao() {

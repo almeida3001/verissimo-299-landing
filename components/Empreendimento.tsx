@@ -148,6 +148,43 @@ export default function Empreendimento() {
               que filtra a luz e marca a silhueta do edifício.
             </p>
           </div>
+
+          {/* Pontos próximos — lista compacta */}
+          <div className="mt-10 pt-8 border-t border-elevated/50">
+            <div className="inline-flex items-center gap-3 mb-5">
+              <span className="block h-px w-8 bg-sea" />
+              <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase">
+                Pontos próximos
+              </span>
+            </div>
+            <div className="space-y-px bg-white/5">
+              {[
+                { label: "Praia do Pepê",         dist: "4 min a pé"  },
+                { label: "Av. Olegário Maciel",   dist: "3 min a pé"  },
+                { label: "Supermercado Zona Sul", dist: "ao lado"     },
+                { label: "Bodytech · Smart Fit",  dist: "5 min a pé"  },
+                { label: "Bosque da Barra",       dist: "7 min a pé"  },
+                { label: "BRT · Metrô Linha 4",   dist: "12 min a pé" },
+              ].map((p, i) => (
+                <div
+                  key={p.label}
+                  className="flex items-center justify-between gap-4 bg-bg px-4 py-3"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="font-josefin text-[9px] tracking-w2 text-sea uppercase w-6">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-outfit font-light text-sm text-cream">
+                      {p.label}
+                    </span>
+                  </div>
+                  <span className="font-cormorant italic text-sm text-cream/55 whitespace-nowrap">
+                    {p.dist}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
 
