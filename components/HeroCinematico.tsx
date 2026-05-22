@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 const roles = ["privilegiada", "exclusiva", "contemporânea", "à beira-mar"];
 
@@ -30,7 +31,7 @@ export default function HeroCinematico() {
 
       {/* ── Background — Vídeo fullscreen ── */}
       <div className="absolute inset-0">
-        <motion.video
+        <video
           ref={videoRef}
           autoPlay
           muted
@@ -38,14 +39,11 @@ export default function HeroCinematico() {
           playsInline
           preload="auto"
           poster="/videos/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ opacity: { duration: 1.8 }, scale: { duration: 12, ease: "linear" } }}
+          className="absolute inset-0 w-full h-full object-cover animate-hero-zoom"
         >
           <source src="/videos/hero.webm" type="video/webm" />
           <source src="/videos/hero.mp4" type="video/mp4" />
-        </motion.video>
+        </video>
 
         <div className="absolute inset-0 bg-black/25" />
         <div
