@@ -121,7 +121,7 @@ export default function Empreendimento() {
 
           {/* Sub */}
           <p className="font-cormorant italic text-lg md:text-xl text-cream/85 leading-snug mb-10 max-w-md">
-            Na Avenida Érico Veríssimo, frente para o mar.
+            Na Avenida Érico Veríssimo, no coração da Barra.
           </p>
 
           {/* Descrição detalhada */}
@@ -164,47 +164,15 @@ export default function Empreendimento() {
 
         <div className="relative max-w-6xl mx-auto">
 
-          {/* Header bloco descritivo — Imagem à esquerda + Texto completo à direita */}
+          {/* Header bloco descritivo — Texto à esquerda + Imagem à direita */}
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
 
-            {/* Lado esquerdo — Imagem do Veríssimo */}
+            {/* Lado esquerdo — Eyebrow + Título + Descrição completa */}
             <motion.div
-              className="relative overflow-hidden"
-              style={{ aspectRatio: "4/5" }}
               initial={{ opacity: 0, x: -32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <motion.div
-                className="absolute inset-0"
-                initial={{ scale: 1.1 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 2.4, ease: "easeOut" }}
-              >
-                <Image
-                  src="/images/fachada-frontal.png"
-                  alt="Fachada principal Veríssimo Residence"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </motion.div>
-
-              {/* Vignette sutil */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.35) 100%)" }}
-              />
-            </motion.div>
-
-            {/* Lado direito — Eyebrow + Título + Descrição completa */}
-            <motion.div
-              initial={{ opacity: 0, x: 32 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-3 mb-6">
@@ -249,9 +217,41 @@ export default function Empreendimento() {
                   vidro temperado em esquadrias generosas e <span className="text-cream">pedra
                   portuguesa</span> no embasamento. Coroada por um{" "}
                   <span className="text-cream">pergolado superior em bambu</span> que
-                  filtra a luz e marca a silhueta do edifício no skyline da praia.
+                  filtra a luz e marca a silhueta do edifício no skyline da Barra.
                 </p>
               </div>
+            </motion.div>
+
+            {/* Lado direito — Imagem do Veríssimo */}
+            <motion.div
+              className="relative overflow-hidden order-first md:order-last"
+              style={{ aspectRatio: "4/5" }}
+              initial={{ opacity: 0, x: 32 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.div
+                className="absolute inset-0"
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2.4, ease: "easeOut" }}
+              >
+                <Image
+                  src="/images/fachada-frontal.png"
+                  alt="Fachada principal Veríssimo Residence"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+
+              {/* Vignette sutil */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,0.35) 100%)" }}
+              />
             </motion.div>
           </div>
 

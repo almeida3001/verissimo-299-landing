@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
-const roles = ["privilegiada", "exclusiva", "contemporânea", "à beira-mar"];
+const roles = ["privilegiada", "exclusiva", "contemporânea", "atemporal"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -70,7 +70,7 @@ export default function HeroCinematico() {
         >
           <span className="block h-px w-10 bg-cream/60" />
           <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-cream uppercase">
-            Lançamento '26 · Barra da Tijuca
+            No coração da Barra da Tijuca
           </span>
           <span className="block h-px w-10 bg-cream/60" />
         </motion.div>
@@ -121,7 +121,7 @@ export default function HeroCinematico() {
               {roles[roleIndex]}
             </motion.span>
           </AnimatePresence>{" "}
-          a poucos metros do mar.
+          a poucos passos da praia.
         </motion.p>
 
         {/* CTAs */}
