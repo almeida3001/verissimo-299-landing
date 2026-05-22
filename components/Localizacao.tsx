@@ -6,7 +6,7 @@ import { MapPin } from "lucide-react";
 
 export default function Localizacao() {
   return (
-    <section className="relative bg-warmlight text-textdark py-24 md:py-32 px-6 md:px-16 overflow-hidden" id="bairro">
+    <section className="relative bg-warmlight text-textdark overflow-hidden" id="bairro">
 
       <div
         className="absolute inset-0 pointer-events-none"
@@ -16,11 +16,11 @@ export default function Localizacao() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-stretch">
+      <div className="relative grid md:grid-cols-2 items-stretch">
 
-        {/* Imagem aérea — 50% (preenche altura toda) */}
+        {/* Imagem aérea — 50% FULL BLEED (sem gap, sem padding lateral) */}
         <motion.div
-          className="relative overflow-hidden h-full min-h-[500px] md:min-h-[600px]"
+          className="relative overflow-hidden w-full h-full min-h-[500px] md:min-h-[700px]"
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -62,8 +62,9 @@ export default function Localizacao() {
           </motion.div>
         </motion.div>
 
-        {/* Conteúdo — rico, estilo "Sobre o Bairro" Bruma — 50% */}
+        {/* Conteúdo — rico, estilo "Sobre o Bairro" Bruma — 50% (com padding interno) */}
         <motion.div
+          className="px-6 md:px-12 lg:px-16 py-20 md:py-28 flex flex-col justify-center"
           initial={{ opacity: 0, x: 32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}

@@ -149,7 +149,7 @@ export default function Empreendimento() {
       </div>
 
       {/* ── PARTE 2 — Descrição detalhada do projeto ── */}
-      <div className="relative px-6 md:px-16 py-24 md:py-32" id="empreendimento">
+      <div className="relative pt-24 md:pt-32" id="empreendimento">
 
         {/* Gradient bege sutil */}
         <div
@@ -160,13 +160,14 @@ export default function Empreendimento() {
           }}
         />
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative">
 
-          {/* Header bloco descritivo — Texto 50% à esquerda + Imagem 50% à direita */}
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-stretch mb-20">
+          {/* Header bloco descritivo — Texto 50% à esquerda + Imagem 50% à direita (FULL BLEED) */}
+          <div className="grid md:grid-cols-2 items-stretch mb-20">
 
-            {/* Lado esquerdo — Texto 50% */}
+            {/* Lado esquerdo — Texto 50% (com padding interno) */}
             <motion.div
+              className="px-6 md:px-12 lg:px-16 py-12 md:py-16 flex flex-col justify-center"
               initial={{ opacity: 0, x: -32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -221,9 +222,9 @@ export default function Empreendimento() {
               </div>
             </motion.div>
 
-            {/* Lado direito — Imagem do Veríssimo 50% (preenche altura toda) */}
+            {/* Lado direito — Imagem do Veríssimo 50% (FULL BLEED, sem gap, sem padding) */}
             <motion.div
-              className="relative overflow-hidden order-first md:order-last h-full min-h-[500px] md:min-h-[600px]"
+              className="relative overflow-hidden order-first md:order-last w-full h-full min-h-[500px] md:min-h-[700px]"
               initial={{ opacity: 0, x: 32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -255,7 +256,7 @@ export default function Empreendimento() {
 
           {/* Stats — Informações técnicas do empreendimento */}
           <motion.div
-            className="mb-20"
+            className="px-6 md:px-16 pb-24 md:pb-32 max-w-6xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
