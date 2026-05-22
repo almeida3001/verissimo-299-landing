@@ -47,8 +47,12 @@ export default function Empreendimento() {
 
             <h2 className="font-outfit font-extralight text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.92] tracking-tight mb-6">
               Veríssimo
-              <br />
-              <span className="font-cormorant italic font-light text-gold">residence</span>
+              <span
+                className="block font-cormorant italic font-light text-gold text-2xl md:text-3xl lg:text-4xl -mt-2"
+                style={{ letterSpacing: "0.4em" }}
+              >
+                Residence
+              </span>
             </h2>
           </motion.div>
 

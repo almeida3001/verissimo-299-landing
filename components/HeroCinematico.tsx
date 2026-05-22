@@ -88,14 +88,15 @@ export default function HeroCinematico() {
               Veríssimo
             </motion.h1>
           </div>
-          <div className="overflow-hidden mt-2 md:mt-3">
+          <div className="overflow-hidden -mt-2 md:-mt-4 lg:-mt-6">
             <motion.p
-              className="font-cormorant italic font-light text-2xl md:text-4xl lg:text-5xl text-gold/85 tracking-wide"
+              className="font-cormorant italic font-light text-xl md:text-3xl lg:text-4xl text-gold/90"
+              style={{ letterSpacing: "0.45em" }}
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.2, delay: 0.55, ease }}
             >
-              residence
+              Residence
             </motion.p>
           </div>
         </div>
