@@ -143,10 +143,10 @@ export default function HeroCinematico() {
             href="https://wa.me/5521991024201?text=Ol%C3%A1%2C%20quero%20receber%20a%20tabela%20de%20pre%C3%A7os%20do%20Ver%C3%ADssimo"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 border border-cream/30 text-cream font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-cream hover:bg-white/5 transition-all duration-500 hover:scale-[1.03]"
+            className="group inline-flex items-center gap-2.5 border border-sea/40 text-sea font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:border-sea hover:bg-sea/10 transition-all duration-500 hover:scale-[1.03]"
           >
             <span>Receber tabela</span>
-            <span className="w-0 group-hover:w-3 h-px bg-cream transition-all duration-300" />
+            <span className="w-0 group-hover:w-3 h-px bg-sea transition-all duration-300" />
           </a>
         </motion.div>
       </div>

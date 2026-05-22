@@ -117,10 +117,10 @@ export default function Localizacao() {
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-josefin text-[10px] tracking-w2 text-gold uppercase w-8">
+                  <span className="font-josefin text-[10px] tracking-w2 text-sea uppercase w-8">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-gold transition-colors duration-300">
+                  <span className="font-outfit font-light text-base md:text-lg text-cream group-hover:text-sea transition-colors duration-300">
                     {p.label}
                   </span>
                 </div>

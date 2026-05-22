@@ -101,10 +101,10 @@ export default function Empreendimento() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
             >
-              <span className="font-josefin text-[10px] tracking-w3 text-muted uppercase mb-5 block">
+              <span className="font-josefin text-[10px] tracking-w3 text-sea uppercase mb-5 block">
                 {d.num}
               </span>
-              <h3 className="font-outfit font-light text-xl text-cream mb-3 group-hover:text-gold transition-colors duration-300">
+              <h3 className="font-outfit font-light text-xl text-cream mb-3 group-hover:text-sea transition-colors duration-300">
                 {d.label}
               </h3>
               <p className="font-josefin text-sm text-cream/50 leading-relaxed">
