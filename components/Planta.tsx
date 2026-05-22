@@ -7,10 +7,11 @@ export default function Planta() {
   return (
     <section className="relative bg-warmlight text-textdark py-28 md:py-36 px-6 md:px-16 overflow-hidden" id="planta">
 
-      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-5 gap-16 items-center">
 
-        {/* Texto */}
+        {/* Texto — 60% (3/5 cols) */}
         <motion.div
+          className="md:col-span-3"
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -54,9 +55,9 @@ export default function Planta() {
           </div>
         </motion.div>
 
-        {/* Imagem da planta */}
+        {/* Imagem da planta — 40% (2/5 cols) */}
         <motion.div
-          className="relative"
+          className="relative md:col-span-2"
           initial={{ opacity: 0, x: 32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

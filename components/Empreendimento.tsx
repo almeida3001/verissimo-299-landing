@@ -162,11 +162,12 @@ export default function Empreendimento() {
 
         <div className="relative max-w-6xl mx-auto">
 
-          {/* Header bloco descritivo — Texto à esquerda + Imagem à direita */}
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-20">
+          {/* Header bloco descritivo — Texto 60% à esquerda + Imagem 40% à direita */}
+          <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center mb-20">
 
-            {/* Lado esquerdo — Eyebrow + Título + Descrição completa */}
+            {/* Lado esquerdo — Texto 60% (3/5 cols) */}
             <motion.div
+              className="md:col-span-3"
               initial={{ opacity: 0, x: -32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -221,9 +222,9 @@ export default function Empreendimento() {
               </div>
             </motion.div>
 
-            {/* Lado direito — Imagem do Veríssimo */}
+            {/* Lado direito — Imagem do Veríssimo 40% (2/5 cols) */}
             <motion.div
-              className="relative overflow-hidden order-first md:order-last"
+              className="relative overflow-hidden order-first md:order-last md:col-span-2"
               style={{ aspectRatio: "4/5" }}
               initial={{ opacity: 0, x: 32 }}
               whileInView={{ opacity: 1, x: 0 }}

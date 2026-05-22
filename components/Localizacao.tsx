@@ -16,11 +16,11 @@ export default function Localizacao() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-5 gap-12 md:gap-16 items-center">
 
-        {/* Imagem aérea */}
+        {/* Imagem aérea — 40% (2/5 cols) */}
         <motion.div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden md:col-span-2"
           style={{ aspectRatio: "4/5" }}
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -63,8 +63,9 @@ export default function Localizacao() {
           </motion.div>
         </motion.div>
 
-        {/* Conteúdo — rico, estilo "Sobre o Bairro" Bruma */}
+        {/* Conteúdo — rico, estilo "Sobre o Bairro" Bruma — 60% (3/5 cols) */}
         <motion.div
+          className="md:col-span-3"
           initial={{ opacity: 0, x: 32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
