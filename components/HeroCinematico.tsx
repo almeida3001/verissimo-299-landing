@@ -112,7 +112,7 @@ export default function HeroCinematico() {
           <AnimatePresence mode="wait">
             <motion.span
               key={roleIndex}
-              className="font-cormorant italic text-cream inline-block"
+              className="font-cormorant italic font-bold text-cream inline-block"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
