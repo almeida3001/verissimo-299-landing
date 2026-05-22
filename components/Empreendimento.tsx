@@ -24,8 +24,8 @@ export default function Empreendimento() {
       {/* ── PARTE 1 — Split 50/50: vídeo à esquerda + descrição à direita ── */}
       <div className="relative grid md:grid-cols-2 items-center gap-0">
 
-        {/* Vídeo (50% esquerda) — aspect 16:9 mantém proporção original do filme */}
-        <div className="relative overflow-hidden bg-bg w-full aspect-video">
+        {/* Vídeo (50% esquerda) — quadrado 1:1 */}
+        <div className="relative overflow-hidden bg-bg w-full aspect-square">
           <video
             ref={videoRef}
             muted
