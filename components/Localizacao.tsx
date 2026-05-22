@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
 
 const pontos = [
+  { label: "Praia do Pepê",            dist: "em frente"      },
   { label: "Praia da Barra da Tijuca", dist: "a poucos passos" },
   { label: "Supermercado Zona Sul",    dist: "ao lado"        },
   { label: "Estação do Metrô",         dist: "minutos a pé"   },
@@ -101,7 +102,7 @@ export default function Localizacao() {
 
           {/* Sub */}
           <p className="font-cormorant italic text-lg md:text-xl text-cream/75 leading-snug mb-10 max-w-md">
-            Tudo o que faz a Barra ser a Barra, à sua porta.
+            Entre o mar e o melhor da Barra.
           </p>
 
           {/* Lista de pontos */}
