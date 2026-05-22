@@ -68,11 +68,11 @@ export default function HeroCinematico() {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.45, ease }}
         >
-          <span className="block h-px w-10 bg-gold/60" />
-          <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-gold uppercase">
+          <span className="block h-px w-10 bg-sea/60" />
+          <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
             Lançamento '26 · Barra da Tijuca
           </span>
-          <span className="block h-px w-10 bg-gold/60" />
+          <span className="block h-px w-10 bg-sea/60" />
         </motion.div>
 
         {/* Nome com subline residence */}
@@ -90,7 +90,7 @@ export default function HeroCinematico() {
           </div>
           <div className="overflow-hidden -mt-2 md:-mt-4 lg:-mt-6">
             <motion.p
-              className="font-cormorant italic font-light text-xl md:text-3xl lg:text-4xl text-gold/90"
+              className="font-cormorant italic font-light text-xl md:text-3xl lg:text-4xl text-sea/90"
               style={{ letterSpacing: "0.45em" }}
               initial={{ y: "115%" }}
               animate={{ y: 0 }}
@@ -112,7 +112,7 @@ export default function HeroCinematico() {
           <AnimatePresence mode="wait">
             <motion.span
               key={roleIndex}
-              className="font-cormorant italic text-gold inline-block"
+              className="font-cormorant italic text-sea inline-block"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -133,7 +133,7 @@ export default function HeroCinematico() {
         >
           <a
             href="#interesse"
-            className="group inline-flex items-center gap-2.5 bg-gold text-bg font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:bg-cream transition-all duration-500 hover:scale-[1.03]"
+            className="group inline-flex items-center gap-2.5 bg-sea text-bg font-josefin text-[11px] tracking-w2 uppercase px-8 py-4 rounded-full hover:bg-cream transition-all duration-500 hover:scale-[1.03]"
           >
             <span>Conhecer o Veríssimo</span>
             <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform duration-400" />
@@ -161,7 +161,7 @@ export default function HeroCinematico() {
         <span className="font-josefin text-[9px] tracking-w3 text-cream/40 uppercase">scroll</span>
         <div className="relative w-px h-12 bg-cream/15 overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 w-full h-1/3 bg-gold"
+            className="absolute top-0 left-0 w-full h-1/3 bg-sea"
             animate={{ y: ["-100%", "300%"] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />

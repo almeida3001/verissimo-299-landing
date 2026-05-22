@@ -33,7 +33,7 @@ export default function FooterMarquee() {
           transition={{ duration: 0.7 }}
         >
           <p className="font-outfit font-extralight text-2xl text-cream tracking-tight">
-            Veríssimo <span className="font-cormorant italic text-gold" style={{ letterSpacing: "0.3em" }}>Residence</span>
+            Veríssimo <span className="font-cormorant italic text-sea" style={{ letterSpacing: "0.3em" }}>Residence</span>
           </p>
           <p className="font-josefin text-[10px] tracking-w2 text-muted uppercase mt-1">
             Absoluto Engenharia · Studio R Arquitetura
@@ -57,7 +57,7 @@ export default function FooterMarquee() {
             <a
               key={l.href}
               href={l.href}
-              className="font-josefin text-[10px] tracking-w2 text-muted uppercase hover:text-gold transition-colors duration-300"
+              className="font-josefin text-[10px] tracking-w2 text-muted uppercase hover:text-sea transition-colors duration-300"
             >
               {l.label}
             </a>

@@ -184,7 +184,7 @@ export default function Empreendimento() {
               <h3 className="font-outfit font-extralight text-5xl md:text-6xl text-cream leading-[0.95] tracking-tight">
                 Veríssimo
                 <span
-                  className="block font-cormorant italic font-light text-gold text-2xl md:text-3xl -mt-1"
+                  className="block font-cormorant italic font-light text-sea text-2xl md:text-3xl -mt-1"
                   style={{ letterSpacing: "0.4em" }}
                 >
                   Residence
@@ -270,7 +270,7 @@ export default function Empreendimento() {
             <h3 className="font-outfit font-extralight text-3xl md:text-4xl lg:text-5xl text-cream leading-[1.05] mb-10 max-w-3xl text-balance">
               O melhor da natureza,
               <br />
-              <span className="font-cormorant italic text-gold">trazido para dentro.</span>
+              <span className="font-cormorant italic text-sea">trazido para dentro.</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-12 max-w-3xl">

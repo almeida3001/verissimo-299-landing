@@ -71,7 +71,7 @@ export default function Localizacao() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <MapPin size={12} className="text-gold flex-shrink-0" />
+            <MapPin size={12} className="text-sea flex-shrink-0" />
             <span className="font-josefin text-[10px] tracking-w2 text-cream/85 uppercase">
               Av. Érico Veríssimo, 299 · Barra da Tijuca
             </span>
@@ -87,8 +87,8 @@ export default function Localizacao() {
         >
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-3 mb-8">
-            <span className="block h-px w-10 bg-gold" />
-            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-gold uppercase">
+            <span className="block h-px w-10 bg-sea" />
+            <span className="font-josefin text-[10px] md:text-[11px] tracking-w3 text-sea uppercase">
               Localização
             </span>
           </div>
@@ -97,7 +97,7 @@ export default function Localizacao() {
           <h2 className="font-outfit font-extralight text-4xl md:text-5xl lg:text-6xl text-cream leading-[0.95] tracking-tight mb-6 text-balance">
             Localização
             <br />
-            <span className="font-cormorant italic text-gold">privilegiada</span>
+            <span className="font-cormorant italic text-sea">privilegiada</span>
           </h2>
 
           {/* Sub */}
@@ -136,7 +136,7 @@ export default function Localizacao() {
             href="https://maps.google.com/?q=Av.+Érico+Veríssimo,+299,+Barra+da+Tijuca,+Rio+de+Janeiro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-josefin text-[11px] tracking-w2 text-sea uppercase border-b border-sea/40 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-josefin text-[11px] tracking-w2 text-sea uppercase border-b border-sea/40 pb-1 hover:text-sea hover:border-sea transition-colors duration-300"
           >
             Abrir no Google Maps
           </a>
