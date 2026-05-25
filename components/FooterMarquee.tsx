@@ -81,10 +81,16 @@ export default function FooterMarquee() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/5 px-6 md:px-16 py-5">
+      <div className="border-t border-white/5 px-6 md:px-16 py-5 flex flex-col items-center gap-2">
         <p className="font-josefin text-[9px] tracking-w1 text-cream/20 text-center">
           © 2026 Absoluto Engenharia e Construções. Imagens meramente ilustrativas.
           Memorial descritivo no estande de vendas.
+        </p>
+        <p className="font-josefin text-[9px] tracking-w1 text-cream/15 text-center">
+          Desenvolvido por{" "}
+          <a href="https://inovarmidia.com" target="_blank" rel="noopener noreferrer" className="hover:text-cream/30 transition-colors duration-200">
+            Inovarmidia
+          </a>
         </p>
       </div>
     </footer>
