@@ -91,6 +91,11 @@ export default function FooterMarquee() {
           <a href="https://inovarmidia.com" target="_blank" rel="noopener noreferrer" className="hover:text-cream/30 transition-colors duration-200">
             Inovarmidia
           </a>
+          {" · "}
+          Tecnologia{" "}
+          <a href="https://landfast.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-cream/30 transition-colors duration-200">
+            LandFast
+          </a>
         </p>
       </div>
     </footer>
